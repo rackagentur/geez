@@ -259,11 +259,19 @@ a.btn:hover{
 
 .note em{color: rgba(234,234,234,.92); font-style: normal}
 
+/* --- Global link reset --- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- Booking mail link --- */
 .mail-link {
-  border-bottom: 1px dashed rgba(214, 178, 94, 0.35);
+  color: rgba(255,255,255,.92); /* leicht heller als normaler Text */
+  font-weight: 700;
+  letter-spacing: .02em;
 }
 
 .mail-link:hover {
-  border-bottom-color: rgba(214, 178, 94, 0.8);
+  color: var(--gold); /* Gold nur als Interaktion */
 }
-
