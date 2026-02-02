@@ -258,3 +258,12 @@ a.btn:hover{
 }
 
 .note em{color: rgba(234,234,234,.92); font-style: normal}
+
+.mail-link {
+  border-bottom: 1px dashed rgba(214, 178, 94, 0.35);
+}
+
+.mail-link:hover {
+  border-bottom-color: rgba(214, 178, 94, 0.8);
+}
+
