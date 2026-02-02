@@ -6,275 +6,10 @@
   <meta name="description" content="GEEZ (Gregorgus Geez) — Cologne-based circuit DJ. EPK, mixes, links, and bookings." />
   <title>GEEZ — EPK Hub</title>
 
-  <!-- 
-    Quick setup:
-    1) Replace the URLs in the LINKS section.
-    2) Upload this file as: /epk/index.html on soundofgeez.com
-    3) Point your QR to: https://soundofgeez.com/epk/
-  -->
-
-  <style>
-    :root{
-      --bg:#121214;
-      --card:#17171b;
-      --ink:#EAEAEA;
-      --muted:#B8B8C0;
-      --purple:#7A1FA2;
-      --gold:#D6B25E;
-      --stroke:rgba(255,255,255,.08);
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 800px at 15% 10%, rgba(122,31,162,.18), transparent 55%),
-        radial-gradient(900px 650px at 85% 25%, rgba(214,178,94,.12), transparent 55%),
-        linear-gradient(180deg, #0f0f12 0%, var(--bg) 100%);
-    }
-
-    .wrap{
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 28px 18px 44px;
-    }
-
-    .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding: 14px 16px;
-      border:1px solid var(--stroke);
-      background: rgba(23,23,27,.65);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width: 0;
-    }
-
-    .mark{
-      width:56px;
-      height:56px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background:
-        radial-gradient(70% 70% at 30% 30%, rgba(122,31,162,.35), transparent 60%),
-        radial-gradient(70% 70% at 70% 70%, rgba(214,178,94,.18), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-    }
-
-    .mark span{
-      font-weight: 800;
-      letter-spacing: .6px;
-      color: rgba(255,255,255,.92);
-      font-size: 18px;
-    }
-
-    .titles{min-width:0}
-    .titles h1{
-      margin:0;
-      font-size: 28px;
-      letter-spacing: .6px;
-      line-height: 1.05;
-    }
-
-    .titles .sub{
-      margin-top:6px;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.25;
-    }
-
-    .pill{
-      flex:0 0 auto;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(18,18,20,.7);
-      color: rgba(255,255,255,.9);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .dot{
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background: var(--gold);
-      box-shadow: 0 0 0 6px rgba(214,178,94,.12);
-    }
-
-    .grid{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 16px;
-    }
-
-    @media (max-width: 760px){
-      .grid{grid-template-columns: 1fr}
-      .pill{display:none}
-    }
-
-    .card{
-      border:1px solid var(--stroke);
-      background: rgba(23,23,27,.6);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-
-    .card .hd{
-      padding: 14px 16px 10px;
-      border-bottom:1px solid var(--stroke);
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 10px;
-    }
-
-    .card .hd h2{
-      margin:0;
-      font-size: 14px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.82);
-    }
-
-    .card .hd .hint{
-      font-size: 12px;
-      color: var(--muted);
-      text-align:right;
-    }
-
-    .card .bd{padding: 14px 16px 16px}
-
-    .lead{
-      margin:0;
-      color: rgba(255,255,255,.9);
-      font-size: 15px;
-      line-height: 1.45;
-    }
-
-    .lead strong{color: var(--gold)}
-
-    .buttons{
-      margin-top: 14px;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-    }
-
-    a.btn{
-      text-decoration:none;
-      color: rgba(255,255,255,.92);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-
-    a.btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(214,178,94,.35);
-      background: linear-gradient(180deg, rgba(122,31,162,.10), rgba(255,255,255,.02));
-    }
-
-    .btn .l{
-      display:flex;
-      flex-direction:column;
-      gap: 2px;
-      min-width:0;
-    }
-
-    .btn .t{
-      font-weight: 700;
-      letter-spacing: .2px;
-      white-space: nowrap;
-      overflow:hidden;
-      text-overflow: ellipsis;
-    }
-
-    .btn .d{
-      font-size: 12px;
-      color: var(--muted);
-      white-space: nowrap;
-      overflow:hidden;
-      text-overflow: ellipsis;
-    }
-
-    .btn .r{
-      flex: 0 0 auto;
-      color: rgba(255,255,255,.55);
-      font-weight: 700;
-    }
-
-    .mini{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .chip{
-      border:1px solid var(--stroke);
-      border-radius: 999px;
-      padding: 9px 12px;
-      font-size: 12px;
-      color: rgba(255,255,255,.86);
-      background: rgba(18,18,20,.55);
-    }
-
-    .chip strong{color: var(--gold)}
-
-    .footer{
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-top: 1px solid var(--stroke);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
-      display:flex;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
-    }
-
-    .footer a{color: rgba(234,234,234,.92)}
-
-    .note{
-      margin-top: 10px;
-      font-size: 12px;
-      color: rgba(184,184,192,.92);
-    }
-
-    .note em{color: rgba(234,234,234,.92); font-style: normal}
-  </style>
+  <!-- External stylesheet (same folder) -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="wrap">
     <div class="top">
@@ -282,7 +17,10 @@
         <div class="mark" aria-hidden="true"><span>GEEZ</span></div>
         <div class="titles">
           <h1>GEEZ</h1>
-          <div class="sub">Cologne-based circuit DJ / vocalist / producer<br/>Circuit Tribal peaks → Tech House drive → Disco / Funk groove</div>
+          <div class="sub">
+            Cologne-based circuit DJ / vocalist / producer<br/>
+            Circuit Tribal peaks → Tech House drive → Disco / Funk groove
+          </div>
         </div>
       </div>
       <div class="pill"><span class="dot"></span>Bookings: <strong>rackagentur@gmail.com</strong></div>
@@ -328,7 +66,10 @@
             <div class="chip"><strong>Base</strong> Cologne (EU + international)</div>
           </div>
 
-          <div class="note">Tip: keep this page updated — the QR in your EPK should always point here: <em>soundofgeez.com/epk/</em></div>
+          <div class="note">
+            Tip: keep this page updated — the QR in your EPK should always point here:
+            <em>soundofgeez.com/epk/</em>
+          </div>
         </div>
       </div>
 
@@ -360,7 +101,9 @@
             </a>
           </div>
 
-          <div class="note">If you use <em>info@soundofgeez.com</em>, forward it to Gmail so you never miss a booking.</div>
+          <div class="note">
+            If you use <em>info@soundofgeez.com</em>, forward it to Gmail so you never miss a booking.
+          </div>
         </div>
       </div>
     </div>
