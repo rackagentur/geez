@@ -329,10 +329,11 @@ a {
   filter: contrast(1.05) saturate(1.05);
 }
 
-/* create space so header content doesn't overlap logo area */
+/* top header sits OVER the hero image */
 .hero .top{
   position: relative;
-  padding-top: 120px;
+  margin-top: 14px;
+  z-index: 3;
 }
 
 /* BRANDWT logo top-left only */
@@ -346,7 +347,27 @@ a {
   z-index: 3;
   filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
 }
+/* make the header bar look like a luxury overlay */
+.top-overlay{
+  background: rgba(23,23,27,.55);
+  backdrop-filter: blur(12px);
+}
 
+/* square logo container like your old GEEZ square */
+.mark.mark-logo{
+  display:grid;
+  place-items:center;
+  background: rgba(18,18,20,.35);
+}
+
+/* brand image inside the square */
+.mark.mark-logo img{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  opacity: .95;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+}
 /* ensure pill mail link never turns browser-blue */
 .pill a.mail-link{
   color: rgba(255,255,255,.92);
@@ -361,4 +382,8 @@ a {
   .hero-bg{ height: 200px; }
   .hero .top{ padding-top: 108px; }
   .logo-left{ height: 42px; }
+}
+.mark.mark-logo img{
+  width: 30px;
+  height: 30px;
 }
