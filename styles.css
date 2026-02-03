@@ -43,7 +43,6 @@ body {
   -webkit-backdrop-filter: blur(15px) saturate(160%);
 }
 
-/* Horizontal Brand Layout (Option 2) */
 .brand {
   display: flex;
   flex-direction: row; 
@@ -105,7 +104,7 @@ body {
   line-height: 1.25;
 }
 
-/* Pulse Booking Dot */
+/* Pulse Animation */
 .pill {
   flex: 0 0 auto;
   display: inline-flex;
@@ -186,7 +185,7 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-a.btn {
+.btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -195,9 +194,11 @@ a.btn {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   transition: all 0.2s ease;
+  cursor: pointer;
+  width: 100%;
 }
 
-a.btn:hover {
+.btn:hover {
   transform: translateY(-2px);
   background: rgba(122, 31, 162, 0.15);
   border-color: rgba(214, 178, 94, 0.4);
@@ -207,6 +208,50 @@ a.btn:hover {
 .btn i { font-size: 1.1em; }
 .btn .d { font-size: 12px; color: var(--muted); }
 .btn .r { opacity: 0.5; font-weight: bold; }
+
+/* Booking Form Styles */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.booking-form input, .booking-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 14px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.booking-form input:focus, .booking-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.submit-btn {
+  justify-content: center;
+  background: var(--gold);
+  color: #000;
+  font-weight: 800;
+  border: none;
+  margin-top: 4px;
+}
+
+.submit-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
 
 .mini { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .chip {
@@ -254,12 +299,11 @@ a.btn:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile Adjustments */
 @media (max-width: 760px) {
   .grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
   .pill { display: none; }
   .brand { flex-direction: row !important; gap: 12px; }
   .titles h1 { font-size: 20px; }
   .mark.mark-logo { width: 52px; height: 52px; }
-  .top { padding: 12px 16px; }
 }
