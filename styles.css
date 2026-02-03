@@ -43,7 +43,7 @@ body {
   -webkit-backdrop-filter: blur(15px) saturate(160%);
 }
 
-/* Horizontal Brand Layout */
+/* Horizontal Brand Layout (Option 2) */
 .brand {
   display: flex;
   flex-direction: row; 
@@ -95,7 +95,7 @@ body {
   font-size: 28px;
   letter-spacing: .6px;
   line-height: 1.05;
-  font-weight: 800; /* Bold luxury look */
+  font-weight: 800;
 }
 
 .titles .sub {
@@ -204,7 +204,7 @@ a.btn:hover {
 }
 
 .btn .t { font-weight: 700; display: block; }
-.btn i { font-size: 1.1em; } /* Premium Icon Sizing */
+.btn i { font-size: 1.1em; }
 .btn .d { font-size: 12px; color: var(--muted); }
 .btn .r { opacity: 0.5; font-weight: bold; }
 
