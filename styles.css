@@ -15,12 +15,33 @@ html,body{
   margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color:var(--ink);
+  min-height: 100vh;
   background:
     radial-gradient(1200px 800px at 15% 10%, rgba(122,31,162,.18), transparent 55%),
     radial-gradient(900px 650px at 85% 25%, rgba(214,178,94,.12), transparent 55%),
-    linear-gradient(180deg, rgba(15,15,18,.92) 0%, rgba(18,18,20,.96) 100%),
-    url("hero.jpg") center/cover fixed no-repeat;
+    linear-gradient(180deg, rgba(15,15,18,.86) 0%, rgba(18,18,20,.90) 100%);
 }
+
+/* Full-page hero image behind everything */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url("hero.jpg") center/cover no-repeat;
+  opacity: .28;
+  z-index: -2;
+}
+
+/* Luxury vignette for depth */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(1200px 900px at 50% 10%, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 70%, rgba(0,0,0,.72) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 
 
 .wrap{
