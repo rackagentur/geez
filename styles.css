@@ -8,7 +8,9 @@
   --stroke:rgba(255,255,255,.08);
   --shadow: 0 18px 50px rgba(0,0,0,.45);
   --radius: 18px;
+  --heroH: 260px;
 }
+
 
 *{box-sizing:border-box}
 html,body{
@@ -57,11 +59,13 @@ body::after{
 .hero{
   position: relative;
   margin-bottom: 18px;
-  height: var(--heroH, 240px);
+  height: var(--heroH);
 }
 
 
+
 .hero-bg{
+  z-index: 0;
   position:absolute;
   inset: 0;
   height: 100%;
@@ -361,27 +365,8 @@ a{
 
   .titles h1{ font-size: 24px; }
 
-  .mark.mark-logo img{
-    width: 32px;
-    height: 32px;
-  }
+  .mark{ width:56px; height:56px; }
+  .mark.mark-logo img{ width: 32px; height: 32px; }
 
-  .top-overlay{
-    left: 10px;
-    right: 10px;
-    top: 10px;
-  }
+  .top-overlay{ left: 10px; right: 10px; top: 10px; }
 }
-
-  .pill{display:none}
-
-  .hero-bg{ height: 210px; }
-
-  .titles h1{ font-size: 24px; }
-
-  .mark.mark-logo img{
-    width: 32px;
-    height: 32px;
-  }
-}
-
