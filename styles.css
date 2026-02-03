@@ -267,30 +267,36 @@ a {
 
 /* --- Booking mail link --- */
 .mail-link {
-  color: rgba(255,255,255,.92); /* leicht heller als normaler Text */
+  color: rgba(255,255,255,.92);
   font-weight: 700;
   letter-spacing: .02em;
 }
 
 .mail-link:hover {
-  color: var(--gold); /* Gold nur als Interaktion */
+  color: var(--gold);
 }
-/* HERO BANNER */
+
+/* =========================
+   HERO BANNER + TOP-LEFT LOGO
+   ========================= */
+
 .hero{
   position: relative;
   margin-bottom: 18px;
 }
 
+/* background banner */
 .hero-bg{
   position:absolute;
   inset: 0;
   height: 220px;
-  border-radius: 18px;
+  border-radius: var(--radius);
   overflow:hidden;
   background: #0f0f12;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid var(--stroke);
 }
 
+/* dark gradient so text stays readable */
 .hero-bg::before{
   content:"";
   position:absolute;
@@ -302,6 +308,7 @@ a {
   z-index: 2;
 }
 
+/* hero image */
 .hero-bg img{
   position:absolute;
   inset:0;
@@ -312,29 +319,17 @@ a {
   filter: contrast(1.05) saturate(1.05);
 }
 
-/* make space for the banner so content doesn't overlap */
+/* create space so header content doesn't overlap logo area */
 .hero .top{
   position: relative;
   padding-top: 120px;
 }
 
-/* BRAND assets */
-.brand-element{
+/* BRANDWT logo top-left only */
+.logo-left{
   position:absolute;
   left: 18px;
   top: 18px;
-  height: 54px;
-  width:auto;
-  opacity: .35;
-  z-index: 3;
-  filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
-}
-
-.logo{
-  position:absolute;
-  left: 50%;
-  top: 14px;
-  transform: translateX(-50%);
   height: 50px;
   width:auto;
   opacity: .95;
@@ -342,19 +337,18 @@ a {
   filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
 }
 
-/* kill default link blue in the bookings pill */
+/* ensure pill mail link never turns browser-blue */
 .pill a.mail-link{
   color: rgba(255,255,255,.92);
   text-decoration: none;
 }
 .pill a.mail-link:hover{
+  color: var(--gold);
   text-decoration: none;
-  opacity: .9;
 }
 
 @media (max-width:760px){
   .hero-bg{ height: 200px; }
   .hero .top{ padding-top: 108px; }
-  .logo{ height: 42px; }
-  .brand-element{ height: 42px; opacity: .28; }
+  .logo-left{ height: 42px; }
 }
