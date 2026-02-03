@@ -8,15 +8,9 @@
 
   <link rel="icon" type="image/png" href="BRANDWT.png">
 
-  <meta property="og:title" content="Sound Of Geez — DJ & Producer" />
-  <meta property="og:description" content="Cologne-based circuit DJ. Explore mixes, EPK, and bookings." />
-  <meta property="og:image" content="hero.jpg" />
-  <meta property="og:url" content="https://soundofgeez.com" />
-  <meta name="twitter:card" content="summary_large_image">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
 </head>
 
 <body>
@@ -27,7 +21,6 @@
         <div class="mark mark-logo" aria-label="Sound Of Geez">
           <img src="BRANDWT.png" alt="Sound Of Geez" />
         </div>
-
         <div class="titles">
           <h1>Sound Of Geez</h1>
           <div class="sub">
@@ -76,7 +69,7 @@
             </a>
           </div>
 
-          <div class="mini" aria-label="Quick info">
+          <div class="mini">
             <div class="chip"><strong>BPM</strong> 124–128</div>
             <div class="chip"><strong>Gear</strong> Pioneer CDJs / DJM</div>
             <div class="chip"><strong>Base</strong> Cologne (EU + international)</div>
@@ -94,23 +87,31 @@
           <div class="buttons">
             <a class="btn" href="mailto:rackagentur@gmail.com">
               <span class="l">
-                <span class="t"><i class="fa-solid fa-envelope" style="margin-right: 8px; opacity: 0.7;"></i> Management & Bookings</span>
+                <span class="t"><i class="fa-solid fa-envelope"></i> Management & Bookings</span>
                 <span class="d">rackagentur@gmail.com</span>
+              </span>
+              <span class="r">✉</span>
+            </a>
+
+            <a class="btn" href="mailto:info@soundofgeez.com">
+              <span class="l">
+                <span class="t"><i class="fa-solid fa-paper-plane"></i> Press</span>
+                <span class="d">info@soundofgeez.com</span>
               </span>
               <span class="r">✉</span>
             </a>
 
             <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank" rel="noopener">
               <span class="l">
-                <span class="t"><i class="fa-brands fa-instagram" style="margin-right: 8px; color: var(--gold);"></i> Instagram</span>
+                <span class="t"><i class="fa-brands fa-instagram" style="color:var(--gold)"></i> Instagram</span>
                 <span class="d">@gregorgusgeez</span>
               </span>
               <span class="r">↗</span>
             </a>
 
-            <a class="btn" href="https://open.spotify.com/artist/5RPVQE9mf4NnZWYC1H5R4z" target="_blank" rel="noopener">
+            <a class="btn" href="https://open.spotify.com/artist/your_id" target="_blank" rel="noopener">
               <span class="l">
-                <span class="t"><i class="fa-brands fa-spotify" style="margin-right: 8px; color: var(--gold);"></i> Spotify</span>
+                <span class="t"><i class="fa-brands fa-spotify" style="color:#1DB954"></i> Spotify</span>
                 <span class="d">GEEZ</span>
               </span>
               <span class="r">↗</span>
@@ -120,28 +121,27 @@
       </div>
     </div>
 
-    <div class="card" style="margin-top:20px">
+    <div class="card inquiry-card">
       <div class="hd">
         <h2>Booking Inquiry</h2>
       </div>
       <div class="bd">
-        <form action="https://formspree.io/f/xkozaeov" method="POST" class="booking-form">
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="inquiry-form">
           <div class="form-row">
             <input type="text" name="name" placeholder="Name / Event" required>
-            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <input type="email" name="email" placeholder="Your Email" required>
           </div>
-          <textarea name="message" placeholder="Tell me about the gig (Date, Location, Set length...)" rows="4" required></textarea>
-          <input type="text" name="_gotcha" style="display:none">
-          <button type="submit" class="btn submit-btn">Send Inquiry ⚡</button>
+          <textarea name="message" placeholder="Tell me about the gig (Date, Location, Set length...)" required></textarea>
+          <button type="submit" class="submit-btn">Send Inquiry ⚡</button>
         </form>
       </div>
     </div>
 
-    <div class="card" style="margin-top:16px">
+    <div class="card footer-card">
       <div class="footer">
         <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
         <div>
-          <a href="https://soundofgeez.com" target="_blank" rel="noopener">soundofgeez.com</a>
+          <a href="https://soundofgeez.com">soundofgeez.com</a>
           • <a href="datenschutz.html">Datenschutz</a>
         </div>
       </div>
