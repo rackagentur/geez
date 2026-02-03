@@ -62,7 +62,17 @@ body{
   place-items:center;
   overflow:hidden;
 }
+.mark.mark-logo{
+  background: rgba(18,18,20,.55);
+}
 
+.mark.mark-logo img{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: .95;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.45));
+}
 .mark span{
   font-weight: 800;
   letter-spacing: .6px;
