@@ -11,17 +11,17 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
-
-body{
+html,body{
   margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color:var(--ink);
   background:
     radial-gradient(1200px 800px at 15% 10%, rgba(122,31,162,.18), transparent 55%),
     radial-gradient(900px 650px at 85% 25%, rgba(214,178,94,.12), transparent 55%),
-    linear-gradient(180deg, #0f0f12 0%, var(--bg) 100%);
+    linear-gradient(180deg, rgba(15,15,18,.92) 0%, rgba(18,18,20,.96) 100%),
+    url("hero.jpg") center/cover fixed no-repeat;
 }
+
 
 .wrap{
   max-width: 860px;
@@ -38,7 +38,6 @@ body{
   margin-bottom: 18px;
 }
 
-/* background banner */
 .hero-bg{
   position:absolute;
   inset: 0;
@@ -49,7 +48,6 @@ body{
   border: 1px solid var(--stroke);
 }
 
-/* dark gradient so text stays readable */
 .hero-bg::before{
   content:"";
   position:absolute;
@@ -61,7 +59,6 @@ body{
   z-index: 2;
 }
 
-/* hero image */
 .hero-bg img{
   position:absolute;
   inset:0;
@@ -72,7 +69,10 @@ body{
   filter: contrast(1.05) saturate(1.05);
 }
 
-/* overlay header on top of hero */
+/* =========================
+   TOP HEADER BAR
+   ========================= */
+
 .top{
   display:flex;
   align-items:center;
@@ -101,10 +101,10 @@ body{
   min-width: 0;
 }
 
-/* Square badge (where the old GEEZ square was) */
+/* square badge (replaces old GEEZ square) */
 .mark{
-  width:56px;
-  height:56px;
+  width:60px;
+  height:60px;
   border-radius: 14px;
   border: 1px solid var(--stroke);
   background:
@@ -122,18 +122,11 @@ body{
 }
 
 .mark.mark-logo img{
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   opacity: .95;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
-}
-
-.mark span{
-  font-weight: 800;
-  letter-spacing: .6px;
-  color: rgba(255,255,255,.92);
-  font-size: 18px;
 }
 
 .titles{min-width:0}
@@ -172,6 +165,10 @@ body{
   background: var(--gold);
   box-shadow: 0 0 0 6px rgba(214,178,94,.12);
 }
+
+/* =========================
+   GRID + CARDS
+   ========================= */
 
 .grid{
   margin-top: 18px;
@@ -306,6 +303,10 @@ a.btn:hover{
 
 .footer a{color: rgba(234,234,234,.92)}
 
+/* =========================
+   LINKS (no blue defaults)
+   ========================= */
+
 a{
   color: inherit;
   text-decoration: none;
@@ -317,17 +318,14 @@ a{
   letter-spacing: .02em;
 }
 
-.mail-link:hover{
-  color: var(--gold);
-}
+.mail-link:hover{ color: var(--gold); }
 
-/* never allow default browser-blue in pill */
-.pill a.mail-link{
-  color: rgba(255,255,255,.92);
-}
-.pill a.mail-link:hover{
-  color: var(--gold);
-}
+.pill a.mail-link{ color: rgba(255,255,255,.92); }
+.pill a.mail-link:hover{ color: var(--gold); }
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 760px){
   .grid{grid-template-columns: 1fr}
@@ -338,7 +336,8 @@ a{
   .titles h1{ font-size: 24px; }
 
   .mark.mark-logo img{
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 }
+
