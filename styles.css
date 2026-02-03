@@ -1,6 +1,6 @@
 :root {
   --bg: #121214;
-  --card: rgba(23, 23, 27, 0.45);
+  --card: rgba(23, 23, 27, 0.4);
   --ink: #EAEAEA;
   --muted: #B8B8C0;
   --purple: #7A1FA2;
@@ -17,7 +17,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--ink);
   min-height: 100vh;
-  /* Full page background with luxury dark gradient overlay */
   background: 
     linear-gradient(180deg, rgba(15,15,18,0.25) 0%, rgba(15,15,18,0.9) 100%),
     url("hero.jpg") center/cover no-repeat fixed;
@@ -44,10 +43,10 @@ body {
   -webkit-backdrop-filter: blur(15px) saturate(160%);
 }
 
-/* BRAND LOGO - Side-by-side Layout */
+/* Horizontal Brand Layout */
 .brand {
   display: flex;
-  flex-direction: row; /* Side by side */
+  flex-direction: row; 
   align-items: center;
   gap: 18px;
   min-width: 0;
@@ -56,7 +55,7 @@ body {
 .mark.mark-logo {
   width: 64px;
   height: 64px;
-  flex-shrink: 0; /* Prevents squishing */
+  flex-shrink: 0;
   border-radius: 14px;
   border: 1px solid var(--stroke);
   background: rgba(18, 18, 20, 0.5);
@@ -67,7 +66,6 @@ body {
   animation: logoEntrance 1.2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
-/* Subtle logo glow */
 .mark.mark-logo::after {
   content: "";
   position: absolute;
@@ -81,25 +79,23 @@ body {
   width: 40px;
   height: 40px;
   object-fit: contain;
-  opacity: .95;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.45));
   z-index: 2;
   animation: float 6s ease-in-out infinite;
 }
 
-.titles { 
+.titles {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 0; 
+  min-width: 0;
 }
 
 .titles h1 {
   margin: 0;
   font-size: 28px;
-  font-weight: 800; /* Bolder look per screenshot */
-  letter-spacing: .4px;
+  letter-spacing: .6px;
   line-height: 1.05;
+  font-weight: 800; /* Bold luxury look */
 }
 
 .titles .sub {
@@ -115,12 +111,11 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
+  padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--stroke);
   background: rgba(18, 18, 20, 0.7);
   font-size: 12px;
-  color: rgba(255,255,255,0.9);
 }
 
 .dot {
@@ -140,7 +135,7 @@ body {
   animation: pulse 2s infinite;
 }
 
-/* Grid & Glass Cards */
+/* Glass Cards */
 .grid {
   margin-top: 20px;
   display: grid;
@@ -154,8 +149,8 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  backdrop-filter: blur(14px) brightness(0.85);
-  -webkit-backdrop-filter: blur(14px) brightness(0.85);
+  backdrop-filter: blur(12px) brightness(0.9);
+  -webkit-backdrop-filter: blur(12px) brightness(0.9);
   animation: cardFadeIn 0.8s ease-out 0.4s backwards;
 }
 
@@ -181,7 +176,6 @@ body {
   font-size: 15px;
   line-height: 1.5;
 }
-
 .lead strong { color: var(--gold); }
 
 .buttons {
@@ -196,52 +190,48 @@ a.btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 18px;
+  padding: 14px 16px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
 a.btn:hover {
   transform: translateY(-2px);
   background: rgba(122, 31, 162, 0.15);
   border-color: rgba(214, 178, 94, 0.4);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.btn .t { font-weight: 700; display: block; font-size: 15px; }
-.btn .d { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.btn .r { opacity: 0.5; font-weight: bold; font-size: 18px; }
+.btn .t { font-weight: 700; display: block; }
+.btn i { font-size: 1.1em; } /* Premium Icon Sizing */
+.btn .d { font-size: 12px; color: var(--muted); }
+.btn .r { opacity: 0.5; font-weight: bold; }
 
-/* Quick Info Chips */
 .mini { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .chip {
   border: 1px solid var(--stroke);
   border-radius: 999px;
-  padding: 7px 14px;
+  padding: 6px 12px;
   font-size: 11px;
-  background: rgba(18, 18, 20, 0.5);
-  color: rgba(255,255,255,0.8);
+  background: rgba(18, 18, 20, 0.4);
 }
-.chip strong { color: var(--gold); margin-right: 4px; }
+.chip strong { color: var(--gold); }
 
 .footer {
-  padding: 20px;
+  padding: 16px 20px;
   color: var(--muted);
   font-size: 12px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
-.footer a:hover { color: var(--gold); }
-
-/* --- ANIMATIONS --- */
+/* Animations */
 @keyframes pulse {
   0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(3.5); opacity: 0; }
+  100% { transform: scale(3); opacity: 0; }
 }
 
 @keyframes logoEntrance {
@@ -264,24 +254,12 @@ a.btn:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* Mobile Adjustments */
 @media (max-width: 760px) {
   .grid { grid-template-columns: 1fr; }
   .pill { display: none; }
-  
-  .brand { gap: 14px; }
-  .titles h1 { font-size: 22px; }
-  .titles .sub { font-size: 11px; }
-
-  .mark.mark-logo {
-    width: 54px;
-    height: 54px;
-  }
-  
-  .mark.mark-logo img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .wrap { padding: 20px 14px 40px; }
+  .brand { flex-direction: row !important; gap: 12px; }
+  .titles h1 { font-size: 20px; }
+  .mark.mark-logo { width: 52px; height: 52px; }
+  .top { padding: 12px 16px; }
 }
