@@ -29,6 +29,50 @@ body{
   padding: 28px 18px 44px;
 }
 
+/* =========================
+   HERO BANNER + OVERLAY HEADER
+   ========================= */
+
+.hero{
+  position: relative;
+  margin-bottom: 18px;
+}
+
+/* background banner */
+.hero-bg{
+  position:absolute;
+  inset: 0;
+  height: 240px;
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: #0f0f12;
+  border: 1px solid var(--stroke);
+}
+
+/* dark gradient so text stays readable */
+.hero-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg,
+    rgba(10,10,12,.18) 0%,
+    rgba(10,10,12,.82) 68%,
+    rgba(10,10,12,1) 100%);
+  z-index: 2;
+}
+
+/* hero image */
+.hero-bg img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* overlay header on top of hero */
 .top{
   display:flex;
   align-items:center;
@@ -42,6 +86,14 @@ body{
   backdrop-filter: blur(10px);
 }
 
+.top-overlay{
+  position: relative;
+  z-index: 3;
+  margin-top: 14px;
+  background: rgba(23,23,27,.55);
+  backdrop-filter: blur(12px);
+}
+
 .brand{
   display:flex;
   align-items:center;
@@ -49,6 +101,7 @@ body{
   min-width: 0;
 }
 
+/* Square badge (where the old GEEZ square was) */
 .mark{
   width:56px;
   height:56px;
@@ -62,17 +115,20 @@ body{
   place-items:center;
   overflow:hidden;
 }
+
+/* BRANDWT inside the square */
 .mark.mark-logo{
-  background: rgba(18,18,20,.55);
+  background: rgba(18,18,20,.35);
 }
 
 .mark.mark-logo img{
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   opacity: .95;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,.45));
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
 }
+
 .mark span{
   font-weight: 800;
   letter-spacing: .6px;
@@ -124,11 +180,6 @@ body{
   gap: 16px;
 }
 
-@media (max-width: 760px){
-  .grid{grid-template-columns: 1fr}
-  .pill{display:none}
-}
-
 .card{
   border:1px solid var(--stroke);
   background: rgba(23,23,27,.6);
@@ -152,12 +203,6 @@ body{
   letter-spacing: .14em;
   text-transform: uppercase;
   color: rgba(255,255,255,.82);
-}
-
-.card .hd .hint{
-  font-size: 12px;
-  color: var(--muted);
-  text-align:right;
 }
 
 .card .bd{padding: 14px 16px 16px}
@@ -261,129 +306,39 @@ a.btn:hover{
 
 .footer a{color: rgba(234,234,234,.92)}
 
-.note{
-  margin-top: 10px;
-  font-size: 12px;
-  color: rgba(184,184,192,.92);
-}
-
-.note em{color: rgba(234,234,234,.92); font-style: normal}
-
-/* --- Global link reset --- */
-a {
+a{
   color: inherit;
   text-decoration: none;
 }
 
-/* --- Booking mail link --- */
-.mail-link {
+.mail-link{
   color: rgba(255,255,255,.92);
   font-weight: 700;
   letter-spacing: .02em;
 }
 
-.mail-link:hover {
+.mail-link:hover{
   color: var(--gold);
 }
 
-/* =========================
-   HERO BANNER + TOP-LEFT LOGO
-   ========================= */
-
-.hero{
-  position: relative;
-  margin-bottom: 18px;
-}
-
-/* background banner */
-.hero-bg{
-  position:absolute;
-  inset: 0;
-  height: 220px;
-  border-radius: var(--radius);
-  overflow:hidden;
-  background: #0f0f12;
-  border: 1px solid var(--stroke);
-}
-
-/* dark gradient so text stays readable */
-.hero-bg::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(180deg,
-    rgba(10,10,12,.20) 0%,
-    rgba(10,10,12,.82) 68%,
-    rgba(10,10,12,1) 100%);
-  z-index: 2;
-}
-
-/* hero image */
-.hero-bg img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: contrast(1.05) saturate(1.05);
-}
-
-/* top header sits OVER the hero image */
-.hero .top{
-  position: relative;
-  margin-top: 14px;
-  z-index: 3;
-}
-
-/* BRANDWT logo top-left only */
-.logo-left{
-  position:absolute;
-  left: 18px;
-  top: 18px;
-  height: 50px;
-  width:auto;
-  opacity: .95;
-  z-index: 3;
-  filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
-}
-/* make the header bar look like a luxury overlay */
-.top-overlay{
-  background: rgba(23,23,27,.55);
-  backdrop-filter: blur(12px);
-}
-
-/* square logo container like your old GEEZ square */
-.mark.mark-logo{
-  display:grid;
-  place-items:center;
-  background: rgba(18,18,20,.35);
-}
-
-/* brand image inside the square */
-.mark.mark-logo img{
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  opacity: .95;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
-}
-/* ensure pill mail link never turns browser-blue */
+/* never allow default browser-blue in pill */
 .pill a.mail-link{
   color: rgba(255,255,255,.92);
-  text-decoration: none;
 }
 .pill a.mail-link:hover{
   color: var(--gold);
-  text-decoration: none;
 }
 
-@media (max-width:760px){
-  .hero-bg{ height: 200px; }
-  .hero .top{ padding-top: 108px; }
-  .logo-left{ height: 42px; }
-}
-.mark.mark-logo img{
-  width: 30px;
-  height: 30px;
+@media (max-width: 760px){
+  .grid{grid-template-columns: 1fr}
+  .pill{display:none}
+
+  .hero-bg{ height: 210px; }
+
+  .titles h1{ font-size: 24px; }
+
+  .mark.mark-logo img{
+    width: 28px;
+    height: 28px;
+  }
 }
