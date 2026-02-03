@@ -57,12 +57,14 @@ body::after{
 .hero{
   position: relative;
   margin-bottom: 18px;
+  height: var(--heroH, 240px);
 }
+
 
 .hero-bg{
   position:absolute;
   inset: 0;
-  height: 240px;
+  height: 100%;
   border-radius: var(--radius);
   overflow:hidden;
   background: #0f0f12;
@@ -108,12 +110,15 @@ body::after{
 }
 
 .top-overlay{
-  position: relative;
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 14px;
   z-index: 3;
-  margin-top: 14px;
   background: rgba(23,23,27,.55);
   backdrop-filter: blur(12px);
 }
+
 
 .brand{
   display:flex;
@@ -349,7 +354,25 @@ a{
    ========================= */
 
 @media (max-width: 760px){
+  :root{ --heroH: 210px; }
+
   .grid{grid-template-columns: 1fr}
+  .pill{display:none}
+
+  .titles h1{ font-size: 24px; }
+
+  .mark.mark-logo img{
+    width: 32px;
+    height: 32px;
+  }
+
+  .top-overlay{
+    left: 10px;
+    right: 10px;
+    top: 10px;
+  }
+}
+
   .pill{display:none}
 
   .hero-bg{ height: 210px; }
