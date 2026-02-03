@@ -275,3 +275,86 @@ a {
 .mail-link:hover {
   color: var(--gold); /* Gold nur als Interaktion */
 }
+/* HERO BANNER */
+.hero{
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.hero-bg{
+  position:absolute;
+  inset: 0;
+  height: 220px;
+  border-radius: 18px;
+  overflow:hidden;
+  background: #0f0f12;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.hero-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg,
+    rgba(10,10,12,.20) 0%,
+    rgba(10,10,12,.82) 68%,
+    rgba(10,10,12,1) 100%);
+  z-index: 2;
+}
+
+.hero-bg img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* make space for the banner so content doesn't overlap */
+.hero .top{
+  position: relative;
+  padding-top: 120px;
+}
+
+/* BRAND assets */
+.brand-element{
+  position:absolute;
+  left: 18px;
+  top: 18px;
+  height: 54px;
+  width:auto;
+  opacity: .35;
+  z-index: 3;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
+}
+
+.logo{
+  position:absolute;
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%);
+  height: 50px;
+  width:auto;
+  opacity: .95;
+  z-index: 3;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.55));
+}
+
+/* kill default link blue in the bookings pill */
+.pill a.mail-link{
+  color: rgba(255,255,255,.92);
+  text-decoration: none;
+}
+.pill a.mail-link:hover{
+  text-decoration: none;
+  opacity: .9;
+}
+
+@media (max-width:760px){
+  .hero-bg{ height: 200px; }
+  .hero .top{ padding-top: 108px; }
+  .logo{ height: 42px; }
+  .brand-element{ height: 42px; opacity: .28; }
+}
