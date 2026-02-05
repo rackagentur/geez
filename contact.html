@@ -1,62 +1,131 @@
+<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sound Of Geez | Contact</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=19" />
 </head>
 <body>
-  <!-- Header (same as index.html) -->
+  <!-- Sticky Header -->
   <header class="sticky-header">
-    <!-- ... header content ... -->
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <div class="mark mark-logo" aria-label="Sound Of Geez">
+            <img src="BRANDWT.png" alt="Sound Of Geez" />
+          </div>
+          <div class="titles">
+            <h1>Sound Of Geez</h1>
+            <div class="sub">
+              Cologne-based circuit DJ / vocalist / producer<br/>
+              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
+            </div>
+          </div>
+        </div>
+
+        <div class="pill">
+          <span class="dot"></span>
+          Bookings:
+          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
+        </div>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Contact Section -->
-  <section class="section">
-    <div class="wrap">
-      <h1 class="section-title">Contact</h1>
-      <div class="contact-grid">
-        <div class="contact-form fade-in-up">
-          <h3>Get in touch</h3>
-          <form class="contact-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <input type="text" class="form-control" placeholder="Subject" required>
-            <textarea class="form-control" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
+  <div class="wrap">
+    <!-- Contact Content -->
+    <div class="grid">
+      <div class="card">
+        <div class="hd">
+          <h2>Contact</h2>
         </div>
-        
-        <div class="contact-info fade-in-up" style="animation-delay: 0.2s">
-          <h3>Management & Booking</h3>
-          <address>
-            Rackagentur GmbH<br>
-            Cologne, Germany<br>
-            <a href="mailto:rackagentur@gmail.com">rackagentur@gmail.com</a><br>
-            <a href="tel:+49123456789">+49 123 456 789</a>
-          </address>
+        <div class="bd">
+          <p class="lead">Get in touch for bookings, collaborations, and press inquiries</p>
           
-          <div style="margin-top: 2rem;">
-            <h3>Follow GEEZ</h3>
-            <div class="social-links">
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <div class="contact-grid">
+            <div class="inquiry-card">
+              <div class="hd">
+                <h3>Booking Inquiry</h3>
+              </div>
+              <div class="bd">
+                <form action="https://formspree.io/f/YOUR_ID" method="POST" class="inquiry-form">
+                  <div class="form-row">
+                    <input type="text" name="name" placeholder="Name / Event" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                  </div>
+                  <textarea name="message" placeholder="Tell me about the gig (Date, Location, Set length...)" required></textarea>
+                  <button type="submit" class="submit-btn">Send Inquiry ⚡</button>
+                </form>
+              </div>
+            </div>
+            
+            <div>
+              <div class="buttons">
+                <a class="btn" href="mailto:rackagentur@gmail.com">
+                  <span class="l">
+                    <span class="t"><i class="fa-solid fa-envelope gold-icon"></i> Management & Bookings</span>
+                    <span class="d">rackagentur@gmail.com</span>
+                  </span>
+                  <span class="r">✉</span>
+                </a>
+                
+                <a class="btn" href="mailto:info@soundofgeez.com">
+                  <span class="l">
+                    <span class="t"><i class="fa-solid fa-paper-plane gold-icon"></i> Press</span>
+                    <span class="d">info@soundofgeez.com</span>
+                  </span>
+                  <span class="r">✉</span>
+                </a>
+                
+                <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank">
+                  <span class="l">
+                    <span class="t"><i class="fa-brands fa-instagram gold-icon"></i> Instagram</span>
+                    <span class="d">@gregorgusgeez</span>
+                  </span>
+                  <span class="r">↗</span>
+                </a>
+                
+                <a class="btn" href="http://googleusercontent.com/spotify.com/3" target="_blank">
+                  <span class="l">
+                    <span class="t"><i class="fa-brands fa-spotify gold-icon"></i> Spotify</span>
+                    <span class="d">GEEZ</span>
+                  </span>
+                  <span class="r">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer>
-    <!-- ... footer content ... -->
-  </footer>
+    <!-- Footer -->
+    <div class="card footer-card">
+      <div class="footer">
+        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
+        <div>
+          <a href="https://soundofgeez.com">soundofgeez.com</a>
+          • <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
