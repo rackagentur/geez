@@ -42,53 +42,64 @@ body {
   padding: 8px 0 0;
 }
 
+/* Top Section - Remove border and adjust padding */
 .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px; /* Increased padding for more breathing room */
-  border: 1px solid var(--stroke);
+  padding: 20px; /* Adjust as needed */
   background: rgba(23, 23, 27, 0.4);
   border-radius: var(--radius);
+  /* Remove border to avoid double border */
+  /* border: 1px solid var(--stroke); */ 
 }
 
+/* Brand Section - Adjust gap for larger logo */
 .brand { 
   display: flex; 
   align-items: center; 
-  gap: 24px; /* Increased gap between logo and titles */
+  gap: 20px; /* Reduced gap since logo is larger */
 }
 
-/* Larger logo */
+/* Larger Logo - Match height with text */
 .mark-logo {
-  width: 80px; /* Increased from 64px */
-  height: 80px; /* Increased from 64px */
+  width: 60px; /* Container width */
+  height: 60px; /* Container height */
   flex-shrink: 0;
-  border-radius: 16px; /* Slightly increased for larger logo */
+  border-radius: 14px;
   border: 1px solid var(--stroke);
   background: rgba(18, 18, 20, 0.5);
   display: grid; 
   place-items: center;
 }
 
+/* Logo Image - Scale up to fill container */
 .mark-logo img { 
-  width: 50px; /* Increased from 40px */
-  height: 50px; /* Increased from 40px */
+  width: 40px; /* Image width */
+  height: 40px; /* Image height */
   object-fit: contain; 
 }
 
+/* Title Text - Ensure it's the reference height */
 .titles h1 { 
   margin: 0; 
   font-size: 28px; 
   font-weight: 800; 
   letter-spacing: 0.5px; 
   color: var(--ink); 
+  /* Optional: Add vertical alignment tweak if needed */
+  /* line-height: 1.1; */
 }
-.titles .sub { 
-  margin-top: 4px; 
-  font-size: 13px; 
-  color: var(--muted); 
-  line-height: 1.3; 
+
+/* Navigation Menu - Keep border here if desired */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0 12px;
+  margin-top: 0; /* Adjust if needed */
+  border-top: 1px solid var(--stroke); /* Single border */
 }
 
 /* Booking Pill & Link Fix */
