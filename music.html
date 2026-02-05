@@ -1,45 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sound Of Geez | Music</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=19" />
 </head>
 <body>
-  <!-- Header (same as index.html) -->
+  <!-- Sticky Header -->
   <header class="sticky-header">
-    <!-- ... header content ... -->
-  </header>
-
-  <!-- Music Section -->
-  <section class="section">
     <div class="wrap">
-      <h1 class="section-title">Music</h1>
-      <div class="album-grid">
-        <div class="album-card fade-in-up">
-          <div class="album-cover">
-            <img src="album1.jpg" alt="Circuit Tribal EP">
-            <div class="badge">New</div>
+      <div class="top">
+        <div class="brand">
+          <div class="mark mark-logo" aria-label="Sound Of Geez">
+            <img src="BRANDWT.png" alt="Sound Of Geez" />
           </div>
-          <div class="card-body">
-            <h3>Circuit Tribal EP</h3>
-            <p>Explore the 4-track EP that redefines tribal house with modern production techniques</p>
-            <div style="margin-top: 1rem;">
-              <a href="#" class="btn">Stream on Spotify</a>
+          <div class="titles">
+            <h1>Sound Of Geez</h1>
+            <div class="sub">
+              Cologne-based circuit DJ / vocalist / producer<br/>
+              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
             </div>
           </div>
         </div>
-        
-        <!-- ... other albums ... -->
+
+        <div class="pill">
+          <span class="dot"></span>
+          Bookings:
+          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
+        </div>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="music.html" class="active">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- Music Content -->
+    <div class="grid">
+      <div class="card">
+        <div class="hd">
+          <h2>Music</h2>
+        </div>
+        <div class="bd">
+          <p class="lead">Explore GEEZ's discography and signature sounds</p>
+          
+          <div class="album-section">
+            <h3>Circuit Tribal EP</h3>
+            <div class="album-cover">
+              <img src="album1.jpg" alt="Circuit Tribal EP Cover">
+            </div>
+            <div class="tracklist">
+              <ol>
+                <li>Tribal Pulse (Original Mix)</li>
+                <li>Circuit Dreams (Extended Version)</li>
+                <li>Synth Waves (Feat. Vocalist)</li>
+              </ol>
+            </div>
+            <div class="buttons">
+              <a class="btn" href="#" target="_blank">
+                <span class="l"><span class="t"><i class="fa-brands fa-spotify"></i> Stream on Spotify</span></span>
+                <span class="r">↗</span>
+              </a>
+              <a class="btn" href="#" target="_blank">
+                <span class="l"><span class="t"><i class="fa-solid fa-download"></i> Download Album</span></span>
+                <span class="r">⤓</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="album-section">
+            <h3>Featured Singles</h3>
+            <div class="buttons">
+              <a class="btn" href="#" target="_blank">
+                <span class="l"><span class="t">Disco Fever (2024 Remix)</span><span class="d">124 BPM | Funk House</span></span>
+                <span class="r">▶</span>
+              </a>
+              <a class="btn" href="#" target="_blank">
+                <span class="l"><span class="t">Tech Soul (Original Mix)</span><span class="d">126 BPM | Deep Tech</span></span>
+                <span class="r">▶</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mini">
+            <div class="chip"><strong>BPM</strong> 124–128</div>
+            <div class="chip"><strong>Style</strong> Circuit House</div>
+            <div class="chip"><strong>Gear</strong> Pioneer CDJs</div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer>
-    <!-- ... footer content ... -->
-  </footer>
+    <!-- Footer -->
+    <div class="card footer-card">
+      <div class="footer">
+        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
+        <div>
+          <a href="https://soundofgeez.com">soundofgeez.com</a>
+          • <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
