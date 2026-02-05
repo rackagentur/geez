@@ -1,4 +1,3 @@
-/* styles.css - Complete with all modifications */
 :root {
   --bg: #121214;
   --card: rgba(23, 23, 27, 0.45);
@@ -106,9 +105,13 @@ body {
   color: var(--ink) !important;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
-.mail-link:hover { color: var(--gold) !important; }
+.mail-link:hover { 
+  color: var(--gold) !important; 
+  text-decoration: underline;
+}
 
 .dot {
   width: 8px; 
@@ -306,10 +309,17 @@ a.btn:hover {
   color: white; 
   font-family: inherit; 
   font-size: 14px;
+  transition: border-color 0.3s;
 }
 .inquiry-form textarea { 
   min-height: 120px;
   resize: none; 
+}
+.form-row input:focus,
+.inquiry-form textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(214, 178, 94, 0.2);
 }
 .submit-btn {
   padding: 18px;
@@ -333,7 +343,15 @@ a.btn:hover {
   border-top: 1px solid var(--stroke);
   margin-top: 30px;
 }
-.footer a { color: inherit; text-decoration: none; }
+.footer a { 
+  color: inherit; 
+  text-decoration: none; 
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
 
 /* Animations */
 @keyframes pulse { 
@@ -399,4 +417,15 @@ a.btn:hover {
     width: 45px;
     height: 45px;
   }
+}
+
+/* Accessibility improvements */
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
