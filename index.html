@@ -8,6 +8,60 @@
   <link rel="icon" type="image/png" href="BRANDWT.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles.css?v=20" />
+  <style>
+    /* Critical mobile menu styles (ensure these exist in your CSS) */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 100;
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background: var(--ink);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 760px) {
+      .mobile-menu-toggle {
+        display: flex !important;
+      }
+      
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 120px;
+        left: 0;
+        right: 0;
+        background: rgba(15,15,18,0.95);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        gap: 1rem;
+        z-index: 10;
+        border-top: 1px solid var(--stroke);
+      }
+      
+      .nav-menu.active {
+        display: flex;
+        animation: fadeIn 0.3s forwards;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
@@ -55,26 +109,12 @@
   </header>
 
   <div class="wrap">
-    <!-- Main Content Cards -->
-    <div class="grid">
-      <!-- ... (your existing card content) ... -->
-    </div>
-
-    <!-- Footer Card -->
-    <div class="card footer-card">
-      <div class="footer">
-        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
-        <div>
-          <a href="https://soundofgeez.com">soundofgeez.com</a>
-          • <a href="datenschutz.html">Datenschutz</a>
-        </div>
-      </div>
-    </div>
+    <!-- ALL MAIN CONTENT HERE -->
+    <!-- ... (your complete card content) ... -->
   </div>
 
-  <!-- Scripts -->
   <script>
-    // Set current year in footer
+    // Set copyright year
     document.getElementById('y').textContent = new Date().getFullYear();
     
     // Mobile menu functionality
@@ -88,14 +128,20 @@
           menuToggle.classList.toggle('active');
         });
 
+        // Close menu when clicking links
         document.querySelectorAll('.nav-menu a').forEach(link => {
           link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             menuToggle.classList.remove('active');
           });
         });
+      } else {
+        console.error('Mobile menu elements not found');
       }
     });
   </script>
+  
+  <!-- External scripts -->
+  <script src="script.js" defer></script>
 </body>
 </html>
