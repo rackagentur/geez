@@ -1,39 +1,129 @@
+<!-- videos.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sound Of Geez | Videos</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=19" />
 </head>
 <body>
-  <!-- Header (same as index.html) -->
+  <!-- Sticky Header -->
   <header class="sticky-header">
-    <!-- ... header content ... -->
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <div class="mark mark-logo" aria-label="Sound Of Geez">
+            <img src="BRANDWT.png" alt="Sound Of Geez" />
+          </div>
+          <div class="titles">
+            <h1>Sound Of Geez</h1>
+            <div class="sub">
+              Cologne-based circuit DJ / vocalist / producer<br/>
+              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
+            </div>
+          </div>
+        </div>
+
+        <div class="pill">
+          <span class="dot"></span>
+          Bookings:
+          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
+        </div>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html" class="active">Videos</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Videos Section -->
-  <section class="section">
-    <div class="wrap">
-      <h1 class="section-title">Videos</h1>
-      <div class="video-grid">
-        <div class="video-card fade-in-up">
-          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <h3>Live at Cologne Festival</h3>
-          <p>Full 60-minute set from the mainstage of Cologne Festival 2024</p>
+  <div class="wrap">
+    <!-- Videos Content -->
+    <div class="grid">
+      <div class="card">
+        <div class="hd">
+          <h2>Videos</h2>
         </div>
-        
-        <!-- ... other videos ... -->
+        <div class="bd">
+          <p class="lead">Watch GEEZ's live performances and music videos</p>
+          
+          <div class="video-grid">
+            <div class="video-thumb">
+              <div class="video-info">
+                <h3>Live at Cologne Festival</h3>
+                <p>Mainstage performance | 60-minute set</p>
+              </div>
+              <div class="video-action">
+                <a class="btn" href="#" target="_blank">
+                  <span class="l"><span class="t">Watch Video</span></span>
+                  <span class="r">▶</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="video-thumb">
+              <div class="video-info">
+                <h3>Circuit Tribal Music Video</h3>
+                <p>Official music video | 4K</p>
+              </div>
+              <div class="video-action">
+                <a class="btn" href="#" target="_blank">
+                  <span class="l"><span class="t">Watch Video</span></span>
+                  <span class="r">▶</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="video-thumb">
+              <div class="video-info">
+                <h3>Studio Session</h3>
+                <p>Behind-the-scenes production</p>
+              </div>
+              <div class="video-action">
+                <a class="btn" href="#" target="_blank">
+                  <span class="l"><span class="t">Watch Video</span></span>
+                  <span class="r">▶</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 30px; text-align: center;">
+            <a href="https://www.youtube.com/channel/GEEZ" class="btn" target="_blank">
+              <span class="l">
+                <i class="fa-brands fa-youtube gold-icon"></i>
+                <span class="t">YouTube Channel</span>
+                <span class="d">Full video archive</span>
+              </span>
+              <span class="r">↗</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer>
-    <!-- ... footer content ... -->
-  </footer>
+    <!-- Footer -->
+    <div class="card footer-card">
+      <div class="footer">
+        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
+        <div>
+          <a href="https://soundofgeez.com">soundofgeez.com</a>
+          • <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
