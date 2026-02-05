@@ -7,7 +7,7 @@
   <title>Sound Of Geez</title>
   <link rel="icon" type="image/png" href="BRANDWT.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="stylesheet" href="styles.css?v=22" />
   <style>
     /* Mobile Menu Styles */
     .mobile-menu-toggle {
@@ -20,7 +20,7 @@
       border: none;
       cursor: pointer;
       padding: 0;
-      z-index: 100;
+      z-index: 1000; /* Increased z-index */
     }
 
     .mobile-menu-toggle span {
@@ -56,28 +56,30 @@
         top: 120px;
         left: 0;
         right: 0;
+        bottom: 0; /* Full screen height */
         background: rgba(15,15,18,0.95);
         backdrop-filter: blur(10px);
         padding: 2rem;
         gap: 1rem;
-        z-index: 10;
+        z-index: 999;
         border-top: 1px solid var(--stroke);
+        overflow-y: auto; /* Add scroll */
       }
       
       .nav-menu.active {
         display: flex;
         animation: fadeIn 0.3s forwards;
       }
-      
-      .nav-menu a {
-        padding: 1rem;
-        text-align: center;
-      }
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Ensure no other styles override this */
+    .nav-menu.active {
+      display: flex !important;
     }
   </style>
 </head>
@@ -127,6 +129,7 @@
   </header>
 
   <div class="wrap">
+    <!-- Main content remains here -->
     <div class="grid">
       <div class="card">
         <div class="hd">
@@ -238,32 +241,49 @@
     </div>
   </div>
 
+ <!-- Scripts -->
   <script>
     // Set copyright year
     document.getElementById('y').textContent = new Date().getFullYear();
     
-    // Mobile menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality with error handling
+    function initMobileMenu() {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const navMenu = document.querySelector('.nav-menu');
       
-      if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-          navMenu.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-        });
-
-        // Close menu when clicking links
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-          });
-        });
-      } else {
+      if (!menuToggle || !navMenu) {
         console.error('Mobile menu elements not found');
+        return;
       }
-    });
+
+      // Toggle menu
+      menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent bubbling
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+
+      // Close menu when clicking links
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+        });
+      });
+
+      // Close menu when clicking outside (for desktop testing)
+      document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+        }
+      });
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+    // Run immediately if scripts are at end of body
+    initMobileMenu();
   </script>
   
   <!-- External scripts -->
