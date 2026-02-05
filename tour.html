@@ -1,115 +1,38 @@
-<!-- tour.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sound Of Geez | Tour</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Sticky Header -->
+  <!-- Header (same as index.html) -->
   <header class="sticky-header">
-    <div class="wrap">
-      <div class="top">
-        <div class="brand">
-          <div class="mark mark-logo" aria-label="Sound Of Geez">
-            <img src="BRANDWT.png" alt="Sound Of Geez" />
-          </div>
-          <div class="titles">
-            <h1>Sound Of Geez</h1>
-            <div class="sub">
-              Cologne-based circuit DJ / vocalist / producer<br/>
-              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
-            </div>
-          </div>
-        </div>
-
-        <div class="pill">
-          <span class="dot"></span>
-          Bookings:
-          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
-        </div>
-      </div>
-      
-      <!-- Navigation Menu -->
-      <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="music.html">Music</a>
-        <a href="videos.html">Videos</a>
-        <a href="tour.html" class="active">Tour</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+    <!-- ... header content ... -->
   </header>
 
-  <div class="wrap">
-    <!-- Tour Content -->
-    <div class="grid">
-      <div class="card">
-        <div class="hd">
-          <h2>Tour Dates</h2>
+  <!-- Tour Section -->
+  <section class="section">
+    <div class="wrap">
+      <h1 class="section-title">Tour Dates</h1>
+      <div class="tour-dates">
+        <div class="tour-item fade-in-up">
+          <div class="tour-date">June 15, 2024</div>
+          <div class="tour-event">Cologne Festival</div>
+          <div class="tour-location">Cologne, Germany</div>
+          <a href="#" class="btn">Tickets</a>
         </div>
-        <div class="bd">
-          <p class="lead">Upcoming performances and festival appearances</p>
-          
-          <div class="tour-dates">
-            <div class="tour-item">
-              <div class="tour-header">
-                <div><strong>Cologne Festival</strong></div>
-                <div>2024-06-15</div>
-              </div>
-              <div>Main Stage | 22:00 - 23:30</div>
-              <div>Cologne, Germany</div>
-              <div style="margin-top: 10px;">
-                <a href="#" class="btn" style="padding: 8px 12px;">Tickets</a>
-              </div>
-            </div>
-
-            <div class="tour-item">
-              <div class="tour-header">
-                <div><strong>Berlin Tech Week</strong></div>
-                <div>2024-07-20</div>
-              </div>
-              <div>Club Stage | 01:00 - 02:30</div>
-              <div>Berlin, Germany</div>
-              <div style="margin-top: 10px;">
-                <a href="#" class="btn" style="padding: 8px 12px;">Tickets</a>
-              </div>
-            </div>
-
-            <div class="tour-item">
-              <div class="tour-header">
-                <div><strong>Amsterdam Dance Event</strong></div>
-                <div>2024-10-23</div>
-              </div>
-              <div>Official Showcase | 19:00 - 20:30</div>
-              <div>Amsterdam, Netherlands</div>
-              <div style="margin-top: 10px;">
-                <a href="#" class="btn" style="padding: 8px 12px;">Tickets</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        
+        <!-- ... other tour dates ... -->
       </div>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <div class="card footer-card">
-      <div class="footer">
-        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
-        <div>
-          <a href="https://soundofgeez.com">soundofgeez.com</a>
-          • <a href="datenschutz.html">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <!-- Footer (same as index.html) -->
+  <footer>
+    <!-- ... footer content ... -->
+  </footer>
 </body>
 </html>
