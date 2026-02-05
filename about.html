@@ -1,39 +1,96 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sound Of Geez | About</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=19" />
 </head>
 <body>
-  <!-- Header (same as index.html) -->
+  <!-- Sticky Header -->
   <header class="sticky-header">
-    <!-- ... header content ... -->
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <div class="mark mark-logo" aria-label="Sound Of Geez">
+            <img src="BRANDWT.png" alt="Sound Of Geez" />
+          </div>
+          <div class="titles">
+            <h1>Sound Of Geez</h1>
+            <div class="sub">
+              Cologne-based circuit DJ / vocalist / producer<br/>
+              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
+            </div>
+          </div>
+        </div>
+
+        <div class="pill">
+          <span class="dot"></span>
+          Bookings:
+          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
+        </div>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- About Section -->
-  <section class="section">
-    <div class="wrap">
-      <h1 class="section-title">About Sound Of Geez</h1>
-      <div class="bio-grid">
-        <div class="bio-image fade-in-up">
-          <img src="profile.jpg" alt="GEEZ Profile">
+  <div class="wrap">
+    <!-- About Content -->
+    <div class="grid">
+      <div class="card">
+        <div class="hd">
+          <h2>About</h2>
         </div>
-        <div class="bio-content fade-in-up" style="animation-delay: 0.2s">
-          <h2>Cologne's Tribal Technician</h2>
-          <p>GEEZ has been shaping the electronic music scene in Cologne since 2015 with his signature blend of Circuit Tribal peaks, Tech House drive, and Disco/Funk groove.</p>
-          <p>Starting as a bedroom producer, GEEZ quickly gained recognition for his high-energy live sets and innovative production techniques. His music combines the raw energy of classic techno with the soulful grooves of disco and the precision of modern tech house.</p>
-          <a href="GeezEPK.pdf" class="btn" download>Download Press Kit</a>
+        <div class="bd">
+          <div class="bio-section">
+            <div class="bio-img">
+              <img src="profile.jpg" alt="GEEZ Profile">
+            </div>
+            <div>
+              <p class="lead">Cologne-based circuit DJ, vocalist, and producer</p>
+              <p>GEEZ has been shaping the electronic music scene in Cologne since 2015 with his signature blend of Circuit Tribal peaks, Tech House drive, and Disco/Funk groove. His unique sound has earned him residencies at Cologne's top clubs and performances at major festivals across Europe.</p>
+              
+              <p>Starting as a bedroom producer, GEEZ quickly gained recognition for his high-energy live sets and innovative production techniques. His music combines the raw energy of classic techno with the soulful grooves of disco and the precision of modern tech house.</p>
+              
+              <p>When not performing, GEEZ spends his time mentoring young artists and developing new talent through his Cologne-based music collective. He's known for his dynamic stage presence and ability to read and energize any crowd.</p>
+            </div>
+          </div>
+          
+          <div style="margin-top: 30px; text-align: center;">
+            <a class="btn" href="GeezEPK.pdf" target="_blank">
+              <span class="l"><span class="t">Download Full EPK</span><span class="d">2-page press kit</span></span>
+              <span class="r">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer>
-    <!-- ... footer content ... -->
-  </footer>
+    <!-- Footer -->
+    <div class="card footer-card">
+      <div class="footer">
+        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
+        <div>
+          <a href="https://soundofgeez.com">soundofgeez.com</a>
+          • <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
