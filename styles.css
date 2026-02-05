@@ -1,3 +1,9 @@
+/* Preserved Social Media Colors */
+.fa-spotify { color: #1DB954 !important; }
+.fa-instagram { color: #C13584 !important; }
+.fa-envelope { color: #EA4335 !important; }
+.gold-icon { color: var(--gold) !important; }
+
 :root {
   --bg: #121214;
   --card: rgba(23, 23, 27, 0.45);
@@ -10,7 +16,7 @@
   --radius: 18px;
 }
 
-* {
+* { 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -42,10 +48,11 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   padding: 8px 0 0;
+  transition: background 0.3s ease;
 }
 
 .sticky-header.scrolled {
-  background: rgba(15,15,18,0.98);
+  background: rgba(15,15,18,0.98) !important;
 }
 
 .top {
@@ -112,11 +119,10 @@ body {
   color: var(--ink) !important;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: color 0.3s;
 }
 
-.mail-link:hover,
-.mail-link:focus {
+.mail-link:hover { 
   color: var(--gold) !important; 
   text-decoration: underline;
 }
@@ -214,6 +220,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   margin-bottom: 24px;
+  overflow: hidden;
 }
 
 .card .hd { 
@@ -258,11 +265,14 @@ a.btn {
   transition: all 0.2s ease;
 }
 
-a.btn:hover,
-a.btn:focus { 
+a.btn:hover { 
   background: rgba(122, 31, 162, 0.15); 
   border-color: rgba(214, 178, 94, 0.4); 
   transform: translateY(-2px); 
+}
+
+a.btn.lift {
+  transform: translateY(-2px);
 }
 
 /* Icon Consistency */
@@ -312,7 +322,7 @@ a.btn:focus {
   color: white; 
   font-family: inherit; 
   font-size: 14px;
-  transition: all 0.3s;
+  transition: border-color 0.3s;
 }
 .inquiry-form textarea { 
   min-height: 120px;
@@ -332,14 +342,9 @@ a.btn:focus {
   color: #121214;
   font-weight: 700; 
   cursor: pointer; 
-  transition: all 0.2s;
+  transition: opacity 0.2s;
 }
-.submit-btn:hover,
-.submit-btn:focus {
-  background: #c19d4a;
-  transform: translateY(-2px);
-  opacity: 1;
-}
+.submit-btn:hover { opacity: 0.9; }
 
 /* Footer */
 .footer { 
@@ -354,10 +359,9 @@ a.btn:focus {
 .footer a { 
   color: inherit; 
   text-decoration: none; 
-  transition: all 0.3s;
+  transition: color 0.3s;
 }
-.footer a:hover,
-.footer a:focus {
+.footer a:hover {
   color: var(--gold);
   text-decoration: underline;
 }
@@ -435,12 +439,73 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-.lift { 
-  transform: translateY(-2px);
-  transition: transform 0.2s ease;
+.focus-visible {
+  outline: 2px solid var(--gold);
 }
 
-.focus-visible {
-  outline: 2px solid var(--gold) !important;
-  outline-offset: 2px;
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 18, 20, 0.9);
+  color: var(--ink);
+  padding: 16px;
+  z-index: 2000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cookie-banner .cookie-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cookie-banner .cookie-link {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cookie-banner .cookie-link:hover {
+  text-decoration: underline;
+}
+
+.cookie-accept {
+  padding: 8px 16px;
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  transform: scale(0.95);
+  transition: transform 0.3s;
 }
