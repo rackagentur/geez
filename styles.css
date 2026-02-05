@@ -1,4 +1,4 @@
-/* Updated styles.css with spacing improvements and larger logo */
+/* styles.css - Complete with all modifications */
 :root {
   --bg: #121214;
   --card: rgba(23, 23, 27, 0.45);
@@ -42,72 +42,59 @@ body {
   padding: 8px 0 0;
 }
 
-/* Top Section - Remove border and adjust padding */
 .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px; /* Adjust as needed */
+  padding: 20px;
+  border: 1px solid var(--stroke);
   background: rgba(23, 23, 27, 0.4);
   border-radius: var(--radius);
-  /* Remove border to avoid double border */
-  /* border: 1px solid var(--stroke); */ 
 }
 
-/* Brand Section - Adjust gap for larger logo */
 .brand { 
   display: flex; 
   align-items: center; 
-  gap: 20px; /* Reduced gap since logo is larger */
+  gap: 24px;
 }
 
-/* Larger Logo - Match height with text */
 .mark-logo {
-  width: 60px; /* Container width */
-  height: 60px; /* Container height */
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
-  border-radius: 14px;
+  border-radius: 16px;
   border: 1px solid var(--stroke);
   background: rgba(18, 18, 20, 0.5);
   display: grid; 
   place-items: center;
 }
 
-/* Logo Image - Scale up to fill container */
 .mark-logo img { 
-  width: 40px; /* Image width */
-  height: 40px; /* Image height */
+  width: 50px;
+  height: 50px;
   object-fit: contain; 
 }
 
-/* Title Text - Ensure it's the reference height */
 .titles h1 { 
   margin: 0; 
   font-size: 28px; 
   font-weight: 800; 
   letter-spacing: 0.5px; 
   color: var(--ink); 
-  /* Optional: Add vertical alignment tweak if needed */
-  /* line-height: 1.1; */
+}
+.titles .sub { 
+  margin-top: 4px; 
+  font-size: 13px; 
+  color: var(--muted); 
+  line-height: 1.3; 
 }
 
-/* Navigation Menu - Keep border here if desired */
-.nav-menu {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  padding: 16px 0 12px;
-  margin-top: 0; /* Adjust if needed */
-  border-top: 1px solid var(--stroke); /* Single border */
-}
-
-/* Booking Pill & Link Fix */
 .pill {
   display: inline-flex; 
   align-items: center; 
-  gap: 12px; /* Slightly increased gap */
-  padding: 12px 18px; /* Increased padding */
+  gap: 12px;
+  padding: 12px 18px;
   border-radius: 999px;
   border: 1px solid var(--stroke); 
   background: rgba(18, 18, 20, 0.7);
@@ -143,8 +130,8 @@ body {
 .nav-menu {
   display: flex;
   justify-content: center;
-  gap: 16px; /* Increased from 12px */
-  padding: 16px 0 12px; /* Increased padding */
+  gap: 16px;
+  padding: 16px 0 12px;
   margin-top: -8px;
   border-top: 1px solid var(--stroke);
 }
@@ -154,7 +141,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
-  padding: 8px 16px; /* Increased padding */
+  padding: 8px 16px;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -165,12 +152,48 @@ body {
   background: rgba(214, 178, 94, 0.1);
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--ink);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Grid & Cards */
 .grid { 
   display: grid; 
   grid-template-columns: 1.1fr 0.9fr; 
-  gap: 24px; /* Increased from 20px */
-  margin-top: 24px; /* Increased from 20px */
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .card {
@@ -179,11 +202,11 @@ body {
   border-radius: var(--radius);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  margin-bottom: 24px; /* Increased from 20px */
+  margin-bottom: 24px;
 }
 
 .card .hd { 
-  padding: 20px; /* Increased from 16px */
+  padding: 20px;
   border-bottom: 1px solid var(--stroke); 
   background: rgba(255,255,255,0.02); 
 }
@@ -195,11 +218,11 @@ body {
   color: var(--muted); 
 }
 .card .bd { 
-  padding: 24px; /* Increased from 20px */
+  padding: 24px;
 }
 
 .lead { 
-  margin-bottom: 20px; /* Increased from 16px */
+  margin-bottom: 20px;
   font-size: 15px; 
   color: rgba(255,255,255,0.9); 
 }
@@ -208,14 +231,14 @@ body {
 .buttons { 
   display: flex; 
   flex-direction: column; 
-  gap: 16px; /* Increased from 12px */
+  gap: 16px;
 }
 
 a.btn {
   display: flex; 
   justify-content: space-between; 
   align-items: center;
-  padding: 16px 20px; /* Corrected and increased padding */
+  padding: 16px 20px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.04);
@@ -251,13 +274,13 @@ a.btn:hover {
 .mini { 
   display: flex; 
   flex-wrap: wrap; 
-  gap: 12px; /* Increased from 8px */
-  margin-top: 20px; /* Increased from 16px */
+  gap: 12px;
+  margin-top: 20px;
 }
 .chip { 
   border: 1px solid var(--stroke); 
   border-radius: 999px; 
-  padding: 8px 16px; /* Increased padding */
+  padding: 8px 16px;
   font-size: 11px; 
   background: rgba(18,18,20,0.4); 
 }
@@ -267,16 +290,16 @@ a.btn:hover {
 .inquiry-form { 
   display: flex; 
   flex-direction: column; 
-  gap: 16px; /* Increased from 12px */
+  gap: 16px;
 }
 .form-row { 
   display: flex; 
-  gap: 16px; /* Increased from 12px */
+  gap: 16px;
 }
 .form-row input, 
 .inquiry-form textarea {
   flex: 1; 
-  padding: 16px; /* Increased from 14px */
+  padding: 16px;
   border-radius: 12px;
   border: 1px solid var(--stroke); 
   background: rgba(0,0,0,0.2);
@@ -285,11 +308,11 @@ a.btn:hover {
   font-size: 14px;
 }
 .inquiry-form textarea { 
-  min-height: 120px; /* Increased from 100px */
+  min-height: 120px;
   resize: none; 
 }
 .submit-btn {
-  padding: 18px; /* Increased from 16px */
+  padding: 18px;
   border-radius: 12px; 
   border: none;
   background: var(--gold); 
@@ -302,13 +325,13 @@ a.btn:hover {
 
 /* Footer */
 .footer { 
-  padding: 20px; /* Increased from 16px */
+  padding: 20px;
   color: var(--muted); 
   font-size: 12px; 
   display: flex; 
   justify-content: space-between;
   border-top: 1px solid var(--stroke);
-  margin-top: 30px; /* Increased from 20px */
+  margin-top: 30px;
 }
 .footer a { color: inherit; text-decoration: none; }
 
@@ -318,34 +341,62 @@ a.btn:hover {
   100% { transform: scale(3); opacity: 0; } 
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
 @media (max-width: 760px) {
   .grid { grid-template-columns: 1fr; }
   .form-row { flex-direction: column; }
   .titles h1 { font-size: 20px; }
   .top { padding: 16px; flex-wrap: wrap; }
+  
+  /* Mobile Menu */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    right: 0;
+    background: rgba(15,15,18,0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    gap: 1rem;
+    z-index: 10;
+    border-top: 1px solid var(--stroke);
+  }
+  
+  .nav-menu.active {
+    display: flex;
+    animation: fadeIn 0.3s forwards;
+  }
+  
+  .nav-menu a {
+    padding: 1rem;
+    text-align: center;
+  }
+  
   .pill { 
     width: 100%; 
     justify-content: center; 
     margin-top: 12px; 
-    padding: 12px; /* Increased padding */
-  }
-  .nav-menu { 
-    flex-wrap: wrap;
-    gap: 8px; /* Slightly increased */
-    padding: 12px 0 8px;
-  }
-  .nav-menu a {
-    padding: 6px 12px; /* Increased padding */
-    font-size: 12px;
+    padding: 12px;
   }
   
-  /* Mobile adjustments for larger logo */
+  /* Mobile logo adjustments */
   .mark-logo {
-    width: 70px; /* Slightly reduced for mobile */
+    width: 70px;
     height: 70px;
   }
   .mark-logo img { 
-    width: 45px; /* Slightly reduced for mobile */
+    width: 45px;
     height: 45px;
   }
 }
