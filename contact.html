@@ -1,336 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sound Of Geez | Contact</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=23" />
-  <style>
-    /* Mobile Menu Styles */
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 21px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1000;
-    }
-
-    .mobile-menu-toggle span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background: var(--ink);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    @media (max-width: 760px) {
-      .mobile-menu-toggle {
-        display: flex !important;
-      }
-      
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 120px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(15,15,18,0.95);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        gap: 1rem;
-        z-index: 999;
-        border-top: 1px solid var(--stroke);
-        overflow-y: auto;
-      }
-      
-      .nav-menu.active {
-        display: flex;
-        animation: fadeIn 0.3s forwards;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    /* Ensure no other styles override this */
-    .nav-menu.active {
-      display: flex !important;
-    }
-    
-    /* Contact section styling */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-    
-    .inquiry-card {
-      background: rgba(0,0,0,0.3);
-      border-radius: var(--radius);
-      padding: 20px;
-      border: 1px solid var(--stroke);
-    }
-    
-    .form-row {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    
-    .form-row input {
-      flex: 1;
-      padding: 10px 15px;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      color: var(--ink);
-    }
-    
-    textarea {
-      width: 100%;
-      height: 120px;
-      padding: 15px;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      color: var(--ink);
-      margin-bottom: 15px;
-      resize: vertical;
-    }
-    
-    .submit-btn {
-      background: var(--gold);
-      color: var(--bg);
-      border: none;
-      padding: 12px 25px;
-      border-radius: var(--radius);
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-    
-    .submit-btn:hover {
-      background: var(--gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 760px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .form-row {
-        flex-direction: column;
-      }
-      
-      .form-row input {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=1.1">
 </head>
 <body>
-  <!-- Sticky Navigation Header -->
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
         <div class="brand">
-          <div class="mark mark-logo" aria-label="Sound Of Geez">
-            <img src="BRANDWT.png" alt="Sound Of Geez" />
-          </div>
-          <div class="titles">
-            <h1>Sound Of Geez</h1>
-            <div class="sub">
-              Cologne-based circuit DJ / vocalist / producer<br/>
-              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
-            </div>
-          </div>
+          <div class="mark"><img src="BRANDWT.png" alt="Logo"></div>
+          <div class="titles"><h1>GEEZ</h1><div class="sub">Contact</div></div>
         </div>
-
-        <div class="pill">
-          <span class="dot"></span>
-          Bookings:
-          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
+        <div class="top-actions">
+          <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
         </div>
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-      
-      <!-- Navigation Menu -->
       <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="music.html">Music</a>
-        <a href="videos.html">Videos</a>
-        <a href="tour.html">Tour</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="index.html">Home</a><a href="music.html">Music</a><a href="videos.html">Videos</a><a href="tour.html">Tour</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a>
       </nav>
     </div>
   </header>
 
-  <div class="wrap">
-    <!-- Contact Content -->
-    <div class="grid">
-      <div class="card">
-        <div class="hd">
-          <h2>Contact</h2>
-        </div>
-        <div class="bd">
-          <p class="lead">Get in touch for bookings, collaborations, and press inquiries</p>
-          
-          <div class="contact-grid">
-            <div class="inquiry-card">
-              <div class="hd">
-                <h3>Booking Inquiry</h3>
-              </div>
-              <div class="bd">
-                <form action="https://formspree.io/f/xkozaeov" method="POST" class="inquiry-form">
-                  <div class="form-row">
-                    <input type="text" name="name" placeholder="Name / Event" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                  </div>
-                  <textarea name="message" placeholder="Tell me about the gig (Date, Location, Set length...)" required></textarea>
-                  <button type="submit" class="submit-btn">Send Inquiry ⚡</button>
-                </form>
-              </div>
-            </div>
-            
-            <div>
-              <div class="buttons">
-                <a class="btn" href="mailto:rackagentur@gmail.com">
-                  <span class="l">
-                    <span class="t"><i class="fa-solid fa-envelope gold-icon"></i> Management & Bookings</span>
-                    <span class="d">rackagentur@gmail.com</span>
-                  </span>
-                  <span class="r">✉</span>
-                </a>
-                
-                <a class="btn" href="mailto:info@soundofgeez.com">
-                  <span class="l">
-                    <span class="t"><i class="fa-solid fa-paper-plane gold-icon"></i> Press</span>
-                    <span class="d">info@soundofgeez.com</span>
-                  </span>
-                  <span class="r">✉</span>
-                </a>
-                
-                <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank">
-                  <span class="l">
-                    <span class="t"><i class="fa-brands fa-instagram gold-icon"></i> Instagram</span>
-                    <span class="d">@gregorgusgeez</span>
-                  </span>
-                  <span class="r">↗</span>
-                </a>
-                
-                <a class="btn" href="https://open.spotify.com/artist/123456789" target="_blank">
-                  <span class="l">
-                    <span class="t"><i class="fa-brands fa-spotify gold-icon"></i> Spotify</span>
-                    <span class="d">GEEZ</span>
-                  </span>
-                  <span class="r">↗</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <main class="wrap">
+    <div class="card" style="margin-top:20px;">
+      <div class="hd"><h2>Booking Inquiry</h2></div>
+      <div class="bd">
+        <form action="https://formspree.io/f/xkozaeov" method="POST">
+          <input type="text" name="name" placeholder="Name" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px;">
+          <input type="email" name="email" placeholder="Email" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px;">
+          <textarea name="message" placeholder="Gig details" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px; height:100px;"></textarea>
+          <button type="submit" class="submit-btn" style="width:100%;">Send⚡</button>
+        </form>
       </div>
     </div>
-
-    <!-- Footer -->
-    <div class="card footer-card">
-      <div class="footer">
-        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
-        <div>
-          <a href="https://soundofgeez.com">soundofgeez.com</a>
-          • <a href="datenschutz.html">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script>
-    // Set copyright year
-    document.getElementById('y').textContent = new Date().getFullYear();
-    
-    // Mobile menu functionality with error handling
-    function initMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      
-      if (!menuToggle || !navMenu) {
-        console.error('Mobile menu elements not found');
-        return;
-      }
-
-      // Toggle menu
-      menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-      });
-
-      // Close menu when clicking links
-      document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-        });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-        }
-      });
-    }
-
-    // Initialize when DOM is loaded
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-    initMobileMenu();
-  </script>
-  
-  <!-- External scripts -->
-  <script src="script.js" defer></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
