@@ -8,61 +8,47 @@
 
   <link rel="icon" type="image/png" href="BRANDWT.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- IMPORTANT: bump version when testing on iPhone -->
-  <link rel="stylesheet" href="styles.css?v=999" />
+  <link rel="stylesheet" href="styles.css?v=1000" />
 
-  <!-- Google Analytics (UA) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36220256-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'UA-36220256-1', {
-      'linker': { 'domains': ['soundofgeez.com'] }
-    });
+    gtag('config', 'UA-36220256-1');
   </script>
 </head>
 
 <body>
-  <!-- Sticky Navigation Header -->
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
-        <!-- Brand -->
         <div class="brand">
-          <div class="mark mark-logo" aria-label="GEEZ">
+          <div class="mark mark-logo">
             <img src="BRANDWT.png" alt="GEEZ Logo" />
           </div>
-
           <div class="titles">
             <h1>GEEZ</h1>
             <div class="sub">
-              International DJ &amp; Producer<br/>
-              <strong>Peak-driven Tech House.</strong> Disco soul. Tribal circuit energy.
+              International DJ & Producer<br/>
+              <strong>Peak-driven Tech House.</strong> Disco soul. Tribal energy.
             </div>
           </div>
         </div>
 
-        <!-- Actions row: booking pill + hamburger (hamburger always right) -->
-        <div class="top-actions" aria-label="Header actions">
-          <div class="pill" aria-label="Booking Information">
-            <span class="dot" aria-hidden="true"></span>
-            Bookings:
-            <a
-              class="mail-link"
-              href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A"
-            >info@soundofgeez.com</a>
+        <div class="top-actions">
+          <div class="pill">
+            <span class="dot"></span>
+            <span class="pill-text">Bookings: <a class="mail-link" href="mailto:info@soundofgeez.com">info@soundofgeez.com</a></span>
           </div>
 
           <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
             <span></span><span></span><span></span>
-            <span class="sr-only">Menu</span>
           </button>
         </div>
       </div>
 
-      <!-- Navigation Menu -->
-      <nav class="nav-menu" aria-label="Main Navigation">
+      <nav class="nav-menu">
         <a href="index.html" class="active">Home</a>
         <a href="music.html">Music</a>
         <a href="videos.html">Videos</a>
@@ -74,12 +60,10 @@
   </header>
 
   <main class="wrap">
-
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
+    <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <div class="kicker"><span class="kdot" aria-hidden="true"></span> SOUND OF GEEZ</div>
+          <div class="kicker"><span class="kdot"></span> SOUND OF GEEZ</div>
           <h2>GEEZ</h2>
           <p>
             <strong>Peak-driven Tech House.</strong> Disco soul. Tribal energy.
@@ -87,8 +71,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary"
-              href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A">
+            <a class="btn btn-primary" href="mailto:info@soundofgeez.com?subject=Booking Inquiry">
               <span class="l">
                 <span class="t"><i class="fa-solid fa-envelope"></i> BOOK GEEZ</span>
                 <span class="d">Prefilled booking inquiry</span>
@@ -96,8 +79,7 @@
               <span class="r">✉</span>
             </a>
 
-            <a class="btn"
-              href="GeezEPK.pdf" target="_blank" rel="noopener" download>
+            <a class="btn" href="GeezEPK.pdf" target="_blank" download>
               <span class="l">
                 <span class="t">DOWNLOAD EPK (PDF)</span>
                 <span class="d">Press kit + assets</span>
@@ -109,108 +91,61 @@
       </div>
     </section>
 
-    <!-- GRID -->
-    <section class="grid" aria-label="Main content">
-
-      <!-- EPK & Proof -->
+    <section class="grid">
       <div class="card">
-        <div class="hd">
-          <h3>EPK &amp; Proof</h3>
-        </div>
+        <div class="hd"><h3>EPK & Proof</h3></div>
         <div class="bd">
-          <p class="lead">
-            Everything you need — <strong>EPK</strong>, <strong>signature mix</strong>, and <strong>press assets</strong>.
-          </p>
-
+          <p class="lead">Everything you need — EPK, signature mixes, and press assets.</p>
           <div class="buttons">
-            <a class="btn" href="GeezEPK.pdf" target="_blank" rel="noopener" download>
-              <span class="l"><span class="t">Download EPK (PDF)</span><span class="d">Press kit + booking info</span></span>
+            <a class="btn" href="GeezEPK.pdf" target="_blank">
+              <span class="l"><span class="t">Download EPK (PDF)</span><span class="d">Press kit + info</span></span>
               <span class="r">↗</span>
             </a>
-
-            <a class="btn" href="https://soundcloud.com/gregorgusgeez/sets/start-here" target="_blank" rel="noopener">
-              <span class="l"><span class="t">Listen: Peak-Hour Tech House Promo (60 min)</span><span class="d">Secondary-night ready selection</span></span>
-              <span class="r">↗</span>
-            </a>
-
-            <a class="btn" href="SoundofGeezPICS.zip" target="_blank" rel="noopener" download>
-              <span class="l"><span class="t">Press Photos (ZIP)</span><span class="d">High-res + action shots</span></span>
-              <span class="r">↗</span>
-            </a>
-
-            <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank" rel="noopener">
-              <span class="l"><span class="t">SoundCloud (All Sets)</span><span class="d">Live sets + uploads</span></span>
+            <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank">
+              <span class="l"><span class="t">SoundCloud</span><span class="d">Live sets + uploads</span></span>
               <span class="r">↗</span>
             </a>
           </div>
-
           <div class="mini">
             <div class="chip"><strong>BPM</strong> 124–128</div>
-            <div class="chip"><strong>Gear</strong> Pioneer CDJs / DJM</div>
-            <div class="chip"><strong>Base</strong> Cologne (EU + international)</div>
+            <div class="chip"><strong>Gear</strong> Pioneer CDJ</div>
+            <div class="chip"><strong>Base</strong> Cologne</div>
           </div>
         </div>
       </div>
 
-      <!-- Contact -->
       <div class="card">
-        <div class="hd">
-          <h3>Contact</h3>
-        </div>
+        <div class="hd"><h3>Connect</h3></div>
         <div class="bd">
-          <p class="lead">Stay connected!</p>
-
           <div class="buttons">
-            <a class="btn"
-              href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A"
-              aria-label="Email bookings">
-              <span class="l">
-                <span class="t"><i class="fa-solid fa-envelope"></i> Bookings</span>
-                <span class="d">info@soundofgeez.com</span>
-              </span>
-              <span class="r">✉</span>
-            </a>
-
-            <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank" rel="noopener" aria-label="Instagram">
-              <span class="l">
-                <span class="t"><i class="fa-brands fa-instagram"></i> Instagram</span>
-                <span class="d">@gregorgusgeez</span>
-              </span>
+            <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank">
+              <span class="l"><span class="t"><i class="fa-brands fa-instagram"></i> Instagram</span><span class="d">@gregorgusgeez</span></span>
               <span class="r">↗</span>
             </a>
-
-            <a class="btn" href="https://open.spotify.com/artist/3Q4Q4x8dQ3y0L9J0Z2l8" target="_blank" rel="noopener" aria-label="Spotify">
-              <span class="l">
-                <span class="t"><i class="fa-brands fa-spotify"></i> Spotify</span>
-                <span class="d">GEEZ</span>
-              </span>
+            <a class="btn" href="#" target="_blank">
+              <span class="l"><span class="t"><i class="fa-brands fa-spotify"></i> Spotify</span><span class="d">GEEZ</span></span>
               <span class="r">↗</span>
             </a>
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- Booking Inquiry Form -->
-    <section class="card inquiry-card" aria-label="Booking Inquiry">
-      <div class="hd">
-        <h3>Booking Inquiry</h3>
-      </div>
+    <section class="card inquiry-card">
+      <div class="hd"><h3>Booking Inquiry</h3></div>
       <div class="bd">
-        <form action="https://formspree.io/f/xkozaeov" method="POST" class="inquiry-form" aria-label="Booking Inquiry Form">
+        <form action="https://formspree.io/f/xkozaeov" method="POST" class="inquiry-form">
           <div class="form-row">
-            <input type="text" name="name" placeholder="Name / Event" required aria-label="Name or Event">
-            <input type="email" name="email" placeholder="Your Email" required aria-label="Email Address">
+            <input type="text" name="name" placeholder="Name / Event" required>
+            <input type="email" name="email" placeholder="Your Email" required>
           </div>
-          <textarea name="message" placeholder="Tell me about the gig (Date, Location, Time slot, Set length, budget…)" required aria-label="Event Details"></textarea>
+          <textarea name="message" placeholder="Details (Date, Location, Budget...)" required></textarea>
           <button type="submit" class="submit-btn">Send Inquiry ⚡</button>
         </form>
       </div>
     </section>
 
-    <!-- Footer -->
-    <section class="card footer-card" aria-label="Footer">
+    <section class="card footer-card">
       <div class="footer">
         <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
         <div>
@@ -219,46 +154,20 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <script>
-    // Set copyright year
     document.getElementById('y').textContent = new Date().getFullYear();
+    
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-    // Mobile menu
-    function initMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-
-      if (!menuToggle || !navMenu) return;
-
-      menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-      });
-
-      document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
+    menuToggle.addEventListener('click', () => {
+      const active = navMenu.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', active);
+      document.body.style.overflow = active ? 'hidden' : '';
+    });
   </script>
 </body>
 </html>
