@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GEEZ — Sound Of Geez</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=11.0">
+  <link rel="stylesheet" href="styles.css?v=1.1">
 </head>
 
 <body>
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
-        <div class="brand-info">
-          <h1>GEEZ</h1>
-          <div class="sub-tag">International DJ & Producer</div>
+        <div class="brand">
+          <div class="mark"><img src="BRANDWT.png" alt="Logo"></div>
+          <div class="titles">
+            <h1>GEEZ</h1>
+            <div class="sub">International DJ & Producer</div>
+          </div>
         </div>
-        <div class="header-right">
-          <div class="mark-premium"><img src="BRANDWT.png" alt="GEEZ Logo"></div>
-          <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
+
+        <div class="top-actions">
+          <div class="pill">
+            <span class="dot"></span>
+            <a href="mailto:info@soundofgeez.com">info@soundofgeez.com</a>
+          </div>
+          <button class="mobile-menu-toggle">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
+
       <nav class="nav-menu">
         <a href="index.html" class="active">Home</a>
         <a href="music.html">Music</a>
@@ -33,57 +43,8 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h2>GEEZ</h2>
-          <p>Peak-driven Tech House. Disco soul. Tribal energy. Built for high-impact dance floors.</p>
-          <a class="btn btn-primary" href="mailto:info@soundofgeez.com">
-            <div class="btn-text"><span class="t">BOOK GEEZ</span><span class="d">info@soundofgeez.com</span></div>
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-    </section>
+    </main>
 
-    <div class="grid">
-      <div class="card">
-        <h3 style="margin-top:0; font-size: 18px;">Stay Connected</h3>
-        <div class="action-grid">
-          <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank">
-            <i class="fa-brands fa-soundcloud"></i>
-            <div class="btn-text"><span class="t">Listen</span><span class="d">SoundCloud</span></div>
-          </a>
-          <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-            <div class="btn-text"><span class="t">Follow</span><span class="d">Instagram</span></div>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3 style="margin-top:0; font-size: 18px;">EPK</h3>
-        <a class="btn btn-primary" href="GeezEPK.pdf" download style="margin-top:0">
-          <div class="btn-text"><span class="t">Download Assets</span><span class="d">Full EPK (PDF)</span></div>
-          <i class="fa-solid fa-download"></i>
-        </a>
-      </div>
-    </div>
-
-    <footer style="text-align:center; padding: 40px 0; color:var(--muted); font-size:11px; border-top:1px solid var(--stroke);">
-      © <span id="y"></span> GEEZ • Cologne, DE • <a href="datenschutz.html">Datenschutz</a>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const menu = document.querySelector('.nav-menu');
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.classList.toggle('active');
-      menu.classList.toggle('active');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
