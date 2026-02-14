@@ -8,172 +8,10 @@
 
   <link rel="icon" type="image/png" href="BRANDWT.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=23" />
+  <!-- IMPORTANT: bump version when testing on iPhone -->
+  <link rel="stylesheet" href="styles.css?v=999" />
 
-  <style>
-    /* Mobile Menu Styles (yours, unchanged) */
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 21px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1000;
-    }
-    .mobile-menu-toggle span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background: var(--ink);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-    .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
-    .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    @media (max-width: 760px) {
-      .mobile-menu-toggle { display: flex !important; }
-
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 120px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(15,15,18,0.95);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        gap: 1rem;
-        z-index: 999;
-        border-top: 1px solid var(--stroke);
-        overflow-y: auto;
-      }
-      .nav-menu.active { display: flex; animation: fadeIn 0.3s forwards; }
-
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0,0,0,0);
-        border: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .nav-menu.active { display: flex !important; }
-
-    /* Social media colors */
-    .fa-spotify { color: #1DB954; }
-    .fa-instagram { color: #C13584; }
-    .fa-envelope { color: #EA4335; }
-
-    /* -----------------------------
-       NEW: Hero (minimal + works now)
-       Uses your existing palette vars.
-       ----------------------------- */
-    .hero {
-      margin-top: 16px;
-      border-radius: 28px;
-      overflow: hidden;
-      position: relative;
-      min-height: 62vh;
-      border: 1px solid var(--stroke);
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-      background: #0b0b0f;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background-image: url("assets/hero-desktop.jpg");
-      background-size: cover;
-      background-position: center 40%;
-      filter: saturate(1.05) contrast(1.05);
-      transform: scale(1.02);
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(
-        to top,
-        rgba(0,0,0,.72) 0%,
-        rgba(0,0,0,.45) 35%,
-        rgba(0,0,0,.12) 70%,
-        rgba(0,0,0,0) 100%
-      );
-    }
-    .hero-inner{
-      position: relative;
-      z-index: 1;
-      padding: 34px;
-      display:flex;
-      align-items:flex-end;
-      min-height: 62vh;
-    }
-    .hero-copy{
-      max-width: 720px;
-    }
-    .kicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      opacity: .9;
-      margin-bottom: 10px;
-    }
-    .kdot{
-      width:10px; height:10px; border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #d7b05b, #7a1fa2);
-      box-shadow: 0 0 18px rgba(122,31,162,.55);
-    }
-    .hero h2{
-      margin:0;
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 1.0;
-      letter-spacing: .02em;
-    }
-    .hero p{
-      margin: 12px 0 0;
-      font-size: 16px;
-      opacity: .92;
-      max-width: 54ch;
-    }
-    .hero-actions{
-      margin-top: 18px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .hero-actions .btn {
-      min-width: 220px;
-    }
-
-    @media (max-width: 760px){
-      .hero { min-height: 70vh; }
-      .hero::before{
-        background-image: url("assets/hero-mobile.jpg");
-        background-position: center 35%;
-      }
-      .hero-inner{ padding: 22px; min-height: 70vh; }
-      .hero-actions .btn { width: 100%; min-width: unset; }
-    }
-  </style>
-
-  <!-- Google Analytics (UA) - kept as-is -->
+  <!-- Google Analytics (UA) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36220256-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -190,39 +28,37 @@
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
+        <!-- Brand -->
         <div class="brand">
-          <div class="mark mark-logo" aria-label="Sound Of Geez">
-            <img src="BRANDWT.png" alt="Sound Of Geez Logo" />
+          <div class="mark mark-logo" aria-label="GEEZ">
+            <img src="BRANDWT.png" alt="GEEZ Logo" />
           </div>
+
           <div class="titles">
             <h1>GEEZ</h1>
             <div class="sub">
-              International DJ & Producer<br/>
-              <strong>Peak-driven Tech House.</strong> Disco soul. Tribal Circuit energy.
+              International DJ &amp; Producer<br/>
+              <strong>Peak-driven Tech House.</strong> Disco soul. Tribal circuit energy.
             </div>
           </div>
         </div>
 
-        <!-- Booking pill now uses the prefilled mailto (pro funnel) -->
-       <div class="top-actions">
-  <div class="pill" aria-label="Booking Information">
-    <span class="dot" aria-hidden="true"></span>
-    Bookings:
-    <a
-      href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A"
-      class="mail-link"
-    >info@soundofgeez.com</a>
-  </div>
+        <!-- Actions row: booking pill + hamburger (hamburger always right) -->
+        <div class="top-actions" aria-label="Header actions">
+          <div class="pill" aria-label="Booking Information">
+            <span class="dot" aria-hidden="true"></span>
+            Bookings:
+            <a
+              class="mail-link"
+              href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A"
+            >info@soundofgeez.com</a>
+          </div>
 
-  <!-- Mobile Menu Toggle Button -->
-  <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span class="sr-only">Menu</span>
-  </button>
-</div>
-
+          <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+            <span class="sr-only">Menu</span>
+          </button>
+        </div>
       </div>
 
       <!-- Navigation Menu -->
@@ -237,26 +73,31 @@
     </div>
   </header>
 
-  <div class="wrap">
+  <main class="wrap">
 
-    <!-- NEW: HERO (Scale / Authority) -->
+    <!-- HERO -->
     <section class="hero" aria-label="Hero">
       <div class="hero-inner">
         <div class="hero-copy">
           <div class="kicker"><span class="kdot" aria-hidden="true"></span> SOUND OF GEEZ</div>
           <h2>GEEZ</h2>
-          <p><strong>Peak-driven Tech House.</strong> Disco soul. Tribal circuit energy. Built for high-impact dance floors — Pride, Circuit events, and clubs.</p>
+          <p>
+            <strong>Peak-driven Tech House.</strong> Disco soul. Tribal energy.
+            Built for high-impact dance floors — Pride, circuit events, and clubs.
+          </p>
 
           <div class="hero-actions">
-            <a class="btn" href="mailto:rackagentur@gmail.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A">
+            <a class="btn btn-primary"
+              href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A">
               <span class="l">
-                <span class="t"><i class="fa-solid fa-envelope gold-icon"></i> BOOK GEEZ</span>
+                <span class="t"><i class="fa-solid fa-envelope"></i> BOOK GEEZ</span>
                 <span class="d">Prefilled booking inquiry</span>
               </span>
               <span class="r">✉</span>
             </a>
 
-            <a class="btn" href="GeezEPK.pdf" target="_blank" rel="noopener" download>
+            <a class="btn"
+              href="GeezEPK.pdf" target="_blank" rel="noopener" download>
               <span class="l">
                 <span class="t">DOWNLOAD EPK (PDF)</span>
                 <span class="d">Press kit + assets</span>
@@ -268,12 +109,13 @@
       </div>
     </section>
 
-    <!-- Main content -->
-    <div class="grid">
+    <!-- GRID -->
+    <section class="grid" aria-label="Main content">
 
+      <!-- EPK & Proof -->
       <div class="card">
         <div class="hd">
-          <h2>EPK & Proof</h2>
+          <h3>EPK &amp; Proof</h3>
         </div>
         <div class="bd">
           <p class="lead">
@@ -286,7 +128,6 @@
               <span class="r">↗</span>
             </a>
 
-            <!-- Updated naming for the new positioned promo mix -->
             <a class="btn" href="https://soundcloud.com/gregorgusgeez/sets/start-here" target="_blank" rel="noopener">
               <span class="l"><span class="t">Listen: Peak-Hour Tech House Promo (60 min)</span><span class="d">Secondary-night ready selection</span></span>
               <span class="r">↗</span>
@@ -311,25 +152,20 @@
         </div>
       </div>
 
+      <!-- Contact -->
       <div class="card">
         <div class="hd">
-          <h2>Contact</h2>
+          <h3>Contact</h3>
         </div>
         <div class="bd">
           <p class="lead">Stay connected!</p>
 
           <div class="buttons">
-            <a class="btn" href="mailto:rackagentur@gmail.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A" aria-label="Email Management">
+            <a class="btn"
+              href="mailto:info@soundofgeez.com?subject=Booking%20Inquiry%20%E2%80%93%20GEEZ&body=Event%20Name%3A%0D%0ADate%3A%0D%0ALocation%3A%0D%0ATime%20Slot%3A%0D%0ASet%20Length%3A%0D%0AExpected%20Attendance%3A%0D%0ABudget%20Range%3A%0D%0AContact%20Person%3A%0D%0ALinks%20%2F%20Notes%3A%0D%0A"
+              aria-label="Email bookings">
               <span class="l">
-                <span class="t"><i class="fa-solid fa-envelope gold-icon"></i> Management & Bookings</span>
-                <span class="d">Prefilled inquiry</span>
-              </span>
-              <span class="r">✉</span>
-            </a>
-
-            <a class="btn" href="mailto:info@soundofgeez.com?subject=Press%20Inquiry%20%E2%80%93%20GEEZ&body=Hi%20GEEZ%2C%0D%0A%0D%0AWe%E2%80%99d%20like%20to%20request%20press%20assets%20%2F%20interview%20info.%0D%0A%0D%0AOutlet%3A%0D%0ADeadline%3A%0D%0AQuestions%20%2F%20Notes%3A%0D%0A" aria-label="Email Press">
-              <span class="l">
-                <span class="t"><i class="fa-solid fa-paper-plane gold-icon"></i> Press</span>
+                <span class="t"><i class="fa-solid fa-envelope"></i> Bookings</span>
                 <span class="d">info@soundofgeez.com</span>
               </span>
               <span class="r">✉</span>
@@ -337,7 +173,7 @@
 
             <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank" rel="noopener" aria-label="Instagram">
               <span class="l">
-                <span class="t"><i class="fa-brands fa-instagram gold-icon"></i> Instagram</span>
+                <span class="t"><i class="fa-brands fa-instagram"></i> Instagram</span>
                 <span class="d">@gregorgusgeez</span>
               </span>
               <span class="r">↗</span>
@@ -345,7 +181,7 @@
 
             <a class="btn" href="https://open.spotify.com/artist/3Q4Q4x8dQ3y0L9J0Z2l8" target="_blank" rel="noopener" aria-label="Spotify">
               <span class="l">
-                <span class="t"><i class="fa-brands fa-spotify gold-icon"></i> Spotify</span>
+                <span class="t"><i class="fa-brands fa-spotify"></i> Spotify</span>
                 <span class="d">GEEZ</span>
               </span>
               <span class="r">↗</span>
@@ -354,11 +190,12 @@
         </div>
       </div>
 
-    </div>
+    </section>
 
-    <div class="card inquiry-card">
+    <!-- Booking Inquiry Form -->
+    <section class="card inquiry-card" aria-label="Booking Inquiry">
       <div class="hd">
-        <h2>Booking Inquiry</h2>
+        <h3>Booking Inquiry</h3>
       </div>
       <div class="bd">
         <form action="https://formspree.io/f/xkozaeov" method="POST" class="inquiry-form" aria-label="Booking Inquiry Form">
@@ -370,9 +207,10 @@
           <button type="submit" class="submit-btn">Send Inquiry ⚡</button>
         </form>
       </div>
-    </div>
+    </section>
 
-    <div class="card footer-card">
+    <!-- Footer -->
+    <section class="card footer-card" aria-label="Footer">
       <div class="footer">
         <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
         <div>
@@ -380,35 +218,29 @@
           • <a href="datenschutz.html">Datenschutz</a>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
+  </main>
 
-  <!-- Scripts -->
   <script>
     // Set copyright year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Mobile menu functionality with error handling
+    // Mobile menu
     function initMobileMenu() {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const navMenu = document.querySelector('.nav-menu');
 
-      if (!menuToggle || !navMenu) {
-        console.error('Mobile menu elements not found');
-        return;
-      }
+      if (!menuToggle || !navMenu) return;
 
-      // Toggle menu
       menuToggle.addEventListener('click', function(e) {
         e.stopPropagation();
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
         navMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
       });
 
-      // Close menu when clicking links
       document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
           navMenu.classList.remove('active');
@@ -417,7 +249,6 @@
         });
       });
 
-      // Close menu when clicking outside (for desktop testing)
       document.addEventListener('click', (e) => {
         if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
           navMenu.classList.remove('active');
@@ -427,12 +258,7 @@
       });
     }
 
-    // Initialize when DOM is loaded
     document.addEventListener('DOMContentLoaded', initMobileMenu);
-    initMobileMenu();
   </script>
-
-  <!-- External scripts -->
-  <script src="script.js" defer></script>
 </body>
 </html>
