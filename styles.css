@@ -55,6 +55,116 @@ body {
 
 .sticky-header.scrolled {
   background: rgba(15,15,18,0.98) !important;
+
+  /* =========================================================
+   MOBILE OVERRIDES — HEADER + HERO
+   Paste this WHOLE block at the VERY BOTTOM of styles.css
+   ========================================================= */
+
+/* ---------- Header: 2-row mobile layout (no overlap) ---------- */
+@media (max-width: 760px){
+
+  /* Stack header content into 2 rows */
+  .sticky-header .top{
+    display:flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Brand row */
+  .sticky-header .brand{
+    display:flex !important;
+    align-items:center !important;
+    gap: 12px !important;
+    min-width: 0 !important;
+  }
+
+  /* Prevent title block from being squeezed weirdly */
+  .sticky-header .titles{
+    min-width: 0 !important;
+  }
+
+  /* Action row: booking pill left + hamburger right */
+  .top-actions{
+    display:flex !important;
+    align-items:center !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* Pill should take available space */
+  .sticky-header .pill{
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  /* Email stays single line + truncates cleanly */
+  .sticky-header .pill,
+  .sticky-header .pill a.mail-link{
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+    max-width: 100% !important;
+  }
+
+  /* Hamburger locked on the far right */
+  .mobile-menu-toggle{
+    display:flex !important;
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Nav drawer should start below the taller header */
+  .nav-menu{
+    top: 160px !important;
+  }
+}
+
+
+/* ---------- Hero: force copy into bottom "stage zone" on mobile ---------- */
+@media (max-width: 760px){
+
+  .hero{
+    position: relative !important;
+  }
+
+  /* Remove padding that lifts the text up */
+  .hero-inner{
+    position: relative !important;
+    min-height: 72vh !important;
+    padding: 0 !important;
+  }
+
+  /* Hard-anchor copy to the bottom */
+  .hero-copy{
+    position: absolute !important;
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    max-width: none !important;
+  }
+
+  /* Show more stage/booth behind the text */
+  .hero::before{
+    background-position: center 78% !important;
+  }
+
+  /* Stronger bottom gradient for readability */
+  .hero::after{
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,.88) 0%,
+      rgba(0,0,0,.62) 35%,
+      rgba(0,0,0,.20) 70%,
+      rgba(0,0,0,0) 100%
+    ) !important;
+  }
+}
+
 }
 
 /* TOP ROW */
