@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = navMenu.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
             
-            // Lock body scroll when menu is open
+            // Lock background scroll when menu is open
             document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
