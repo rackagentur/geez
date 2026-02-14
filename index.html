@@ -3,39 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="GEEZ — International DJ & Producer. Peak-driven tech house." />
   <title>GEEZ — Sound Of Geez</title>
-
-  <link rel="icon" type="image/png" href="BRANDWT.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=1002" />
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36220256-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-36220256-1');
-  </script>
+  <link rel="stylesheet" href="styles.css?v=2000">
 </head>
 
 <body>
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
-        <div class="brand">
-          <div class="mark"><img src="BRANDWT.png" alt="GEEZ Logo" /></div>
-          <div class="titles">
-            <h1>GEEZ</h1>
-            <div class="sub">DJ & Producer • <strong>Tech House</strong></div>
-          </div>
+        <div class="brand-info">
+          <h1>GEEZ</h1>
+          <div class="sub-tag">DJ & Producer • Tech House</div>
         </div>
 
-        <div class="top-actions">
-          <div class="pill">
-            <span class="dot"></span>
-            <a href="mailto:info@soundofgeez.com">info@soundofgeez.com</a>
+        <div class="header-right">
+          <div class="mark-large">
+            <img src="BRANDWT.png" alt="GEEZ Logo">
           </div>
+          
           <button class="mobile-menu-toggle" aria-label="Toggle Menu">
             <span></span><span></span><span></span>
           </button>
@@ -59,70 +45,67 @@
         <div class="hero-copy">
           <h2>GEEZ</h2>
           <p>Peak-driven Tech House. Disco soul. Tribal energy.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:info@soundofgeez.com">
-              <span class="l"><span class="t">BOOK GEEZ</span><span class="d">Email inquiry</span></span>
-              <span class="r">✉</span>
-            </a>
-            <a class="btn" href="GeezEPK.pdf" download>
-              <span class="l"><span class="t">DOWNLOAD EPK</span><span class="d">Press Assets</span></span>
-              <span class="r">↗</span>
-            </a>
-          </div>
+          
+          <a class="btn btn-primary" href="mailto:info@soundofgeez.com">
+            <div class="btn-text">
+              <span class="t">BOOK GEEZ</span>
+              <span class="d">Email inquiry</span>
+            </div>
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          
+          <a class="btn" href="GeezEPK.pdf" download>
+            <div class="btn-text">
+              <span class="t">DOWNLOAD EPK</span>
+              <span class="d">Press Assets (PDF)</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
         </div>
       </div>
     </section>
 
     <section class="grid">
       <div class="card">
-        <div class="hd"><h3>Music</h3></div>
-        <div class="bd">
-          <div class="buttons">
-            <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank">
-              <span class="l"><span class="t">SoundCloud</span><span class="d">Live Sets</span></span>
-              <span class="r">↗</span>
-            </a>
-          </div>
-        </div>
+        <h3>Music</h3>
+        <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank">
+          <div class="btn-text"><span class="t">SoundCloud</span><span class="d">Latest Live Sets</span></div>
+          <i class="fa-brands fa-soundcloud"></i>
+        </a>
       </div>
+      
       <div class="card">
-        <div class="hd"><h3>Social</h3></div>
-        <div class="bd">
-          <div class="buttons">
-            <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank">
-              <span class="l"><span class="t">Instagram</span><span class="d">@gregorgusgeez</span></span>
-              <span class="r">↗</span>
-            </a>
-          </div>
-        </div>
+        <h3>Social</h3>
+        <a class="btn" href="https://www.instagram.com/gregorgusgeez/" target="_blank">
+          <div class="btn-text"><span class="t">Instagram</span><span class="d">@gregorgusgeez</span></div>
+          <i class="fa-brands fa-instagram"></i>
+        </a>
       </div>
     </section>
 
-    <section class="card footer-card">
-      <div class="footer" style="padding: 20px; text-align: center; font-size: 13px; color: var(--muted);">
-        © <span id="y"></span> GEEZ • <a href="datenschutz.html">Datenschutz</a>
-      </div>
-    </section>
+    <footer style="text-align:center; padding: 40px 0; color:var(--muted); font-size:12px;">
+      © <span id="y"></span> GEEZ • Cologne, DE • <a href="datenschutz.html">Datenschutz</a>
+    </footer>
   </main>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.nav-menu');
 
-    menuToggle.addEventListener('click', () => {
-      const active = navMenu.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-      // Lock scrolling when menu is open
-      document.body.style.overflow = active ? 'hidden' : '';
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('active');
+      toggle.classList.toggle('active');
+      // Lock page scroll when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close menu when a link is clicked
+    // Auto-close menu on link click
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
         document.body.style.overflow = '';
       });
     });
