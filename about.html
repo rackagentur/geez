@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sound Of Geez | About</title>
+  <title>About | GEEZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=1.1">
+  <link rel="stylesheet" href="styles.css?v=1.3">
 </head>
 <body>
   <header class="sticky-header">
@@ -14,31 +14,27 @@
           <div class="mark"><img src="BRANDWT.png" alt="Logo"></div>
           <div class="titles"><h1>GEEZ</h1><div class="sub">About</div></div>
         </div>
-        <div class="top-actions">
-          <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
-        </div>
+        <div class="top-actions"><button class="mobile-menu-toggle"><span></span><span></span><span></span></button></div>
       </div>
       <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="music.html">Music</a>
-        <a href="videos.html">Videos</a>
-        <a href="tour.html">Tour</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="music.html">Music</a><a href="videos.html">Videos</a><a href="tour.html">Tour</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
-
   <main class="wrap">
     <div class="card" style="margin-top:20px;">
       <div class="hd"><h2>Biography</h2></div>
       <div class="bd">
-        <img src="profile.jpg" style="width:100%; border-radius:16px; margin-bottom:20px;" alt="Profile">
         <p>Cologne-based circuit DJ, vocalist, and producer shaping the scene since 2015.</p>
-        <p>Signature sound: Circuit Tribal peaks → Tech House drive → Disco / Funk groove.</p>
+        <a class="btn btn-download" href="SoundofGeezPICS.zip" download><span>DOWNLOAD PRESS PHOTOS (ZIP)</span></a>
       </div>
     </div>
+    <div class="card"><div class="hd"><h2>Gallery</h2></div><div class="bd"><div class="gallery-grid">
+      <div class="gallery-item lightbox-trigger"><img src="gallery1.jpg"></div>
+      <div class="gallery-item lightbox-trigger"><img src="gallery2.jpg"></div>
+    </div></div></div>
   </main>
+  <div class="lightbox" id="lightbox"><img src=""></div>
   <script src="script.js"></script>
 </body>
 </html>
