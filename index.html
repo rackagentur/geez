@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>GEEZ — Sound Of Geez</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=4000">
+  <link rel="stylesheet" href="styles.css?v=5000">
 </head>
 
 <body>
@@ -97,7 +97,6 @@
     toggle.addEventListener('click', () => {
       const isOpen = toggle.classList.toggle('active');
       menu.classList.toggle('active');
-      // Scroll Lock: stops the background from moving when menu is open
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
