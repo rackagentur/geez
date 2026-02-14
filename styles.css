@@ -7,7 +7,6 @@
   --stroke2: rgba(255, 255, 255, 0.20);
   --accent: #7A1FA2;
   --gold: #D7B05B;
-  --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
   --radius: 28px;
   --wrap: 1100px;
 }
@@ -25,7 +24,7 @@ body {
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 18px; }
 
-/* Sticky Header Overhaul */
+/* Fixed Header */
 .sticky-header {
   position: sticky;
   top: 0;
@@ -37,17 +36,17 @@ body {
 
 .top {
   display: flex;
-  align-items: center; /* Ensures vertical centering */
+  align-items: center;
   justify-content: space-between;
-  padding: 14px 0; /* Slightly more padding for breathability */
+  padding: 12px 0;
 }
 
-/* Brand Text Left */
+/* Name and Subtitle */
 .brand-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 0; /* Prevents overflow */
+  min-width: 0;
 }
 .brand-info h1 { 
   margin: 0; 
@@ -64,17 +63,16 @@ body {
   font-weight: 700; 
 }
 
-/* Brand Logo Right + Menu Alignment */
+/* Header Right: Logo & Menu Toggle */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-/* Fixed Logo Container */
 .mark-premium {
-  width: 60px; /* Refined size */
-  height: 60px;
+  width: 58px;
+  height: 58px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--stroke2);
   border-radius: 12px;
@@ -83,25 +81,24 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-/* Refined Glow */
+/* Sublte Stage Glow */
 .mark-premium::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(122, 31, 162, 0.3), transparent 80%);
+  background: radial-gradient(circle at center, rgba(122, 31, 162, 0.35), transparent 80%);
   pointer-events: none;
 }
 
 .mark-premium img { 
-  width: 90%; 
-  height: 90%; 
-  object-fit: contain; /* Prevents logo from cutting off */
+  width: 85%; 
+  height: 85%; 
+  object-fit: contain; 
 }
 
-/* Hamburger Toggle */
+/* Burger Toggle */
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -110,7 +107,7 @@ body {
   border: none;
   cursor: pointer;
   z-index: 2100;
-  padding: 4px;
+  padding: 8px;
 }
 .mobile-menu-toggle span { 
   display: block; 
@@ -124,12 +121,12 @@ body {
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; transform: translateX(10px); }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* Navigation Drawer */
+/* Solid Mobile Menu (Fixes Overlap) */
 .nav-menu {
   display: none;
   position: fixed;
   inset: 0;
-  background: #0b0b0f;
+  background: var(--bg); /* Solid black */
   z-index: 2000;
   flex-direction: column;
   justify-content: center;
@@ -139,40 +136,35 @@ body {
 .nav-menu.active { display: flex; }
 
 .nav-menu a {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
-  padding: 16px;
+  padding: 15px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 4px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
   width: 100%;
   text-align: center;
 }
 .nav-menu a.active { color: #fff; text-shadow: 0 0 10px var(--accent); }
 
-/* Hero */
+/* Hero and Grid */
 .hero {
-  margin: 20px 0;
-  border-radius: var(--radius);
-  overflow: hidden;
-  position: relative;
-  min-height: 55vh;
-  border: 1px solid var(--stroke);
+  margin: 20px 0; border-radius: var(--radius); overflow: hidden;
+  position: relative; min-height: 55vh; border: 1px solid var(--stroke);
 }
 .hero::before {
   content: ""; position: absolute; inset: 0;
   background: url('/assets/hero-desktop.jpg') center/cover;
   filter: brightness(0.6);
 }
-.hero-inner { position: relative; z-index: 10; padding: 30px; min-height: 55vh; display: flex; align-items: flex-end; }
-.hero-copy h2 { font-size: clamp(36px, 8vw, 60px); margin: 0; line-height: 1; }
-.hero-copy p { color: rgba(255,255,255,0.7); font-size: 16px; max-width: 450px; margin: 12px 0 20px; }
+.hero-inner { position: relative; z-index: 10; padding: 24px; min-height: 55vh; display: flex; align-items: flex-end; }
+.hero h2 { font-size: 48px; margin: 0; line-height: 1; }
+.hero p { color: rgba(255,255,255,0.7); font-size: 16px; margin: 12px 0 20px; max-width: 440px; }
 
-/* Buttons */
 .btn {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 16px 20px; border-radius: 18px; border: 1px solid var(--stroke);
+  padding: 18px 20px; border-radius: 20px; border: 1px solid var(--stroke);
   background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
   margin-top: 10px; transition: 0.3s;
 }
@@ -180,12 +172,11 @@ body {
 .btn-text .t { font-weight: 700; display: block; font-size: 14px; }
 .btn-text .d { font-size: 11px; color: var(--muted); }
 
-/* Grid */
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
 .card { background: rgba(18,18,25,0.8); border: 1px solid var(--stroke); border-radius: var(--radius); padding: 24px; }
 
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; }
-  .mark-premium { width: 56px; height: 56px; }
+  .mark-premium { width: 54px; height: 54px; }
   .brand-info h1 { font-size: 20px; }
 }
