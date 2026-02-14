@@ -1,159 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sound Of Geez | About</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=23" />
-  <style>
-    /* Mobile Menu Styles */
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 21px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1000;
-    }
-
-    .mobile-menu-toggle span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background: var(--ink);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    @media (max-width: 760px) {
-      .mobile-menu-toggle {
-        display: flex !important;
-      }
-      
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 120px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(15,15,18,0.95);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        gap: 1rem;
-        z-index: 999;
-        border-top: 1px solid var(--stroke);
-        overflow-y: auto;
-      }
-      
-      .nav-menu.active {
-        display: flex;
-        animation: fadeIn 0.3s forwards;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    /* Ensure no other styles override this */
-    .nav-menu.active {
-      display: flex !important;
-    }
-    
-    /* Bio section styling */
-    .bio-section {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-    }
-    
-    .bio-img {
-      flex-shrink: 0;
-      width: 35%;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--stroke);
-    }
-    
-    .bio-img img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    
-    .lead {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: var(--gold);
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 760px) {
-      .bio-section {
-        flex-direction: column;
-      }
-      
-      .bio-img {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=1.1">
 </head>
 <body>
-  <!-- Sticky Navigation Header -->
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
         <div class="brand">
-          <div class="mark mark-logo" aria-label="Sound Of Geez">
-            <img src="BRANDWT.png" alt="Sound Of Geez" />
-          </div>
-          <div class="titles">
-            <h1>Sound Of Geez</h1>
-            <div class="sub">
-              Cologne-based circuit DJ / vocalist / producer<br/>
-              Circuit Tribal peaks → Tech House drive → Disco / Funk groove
-            </div>
-          </div>
+          <div class="mark"><img src="BRANDWT.png" alt="Logo"></div>
+          <div class="titles"><h1>GEEZ</h1><div class="sub">About</div></div>
         </div>
-
-        <div class="pill">
-          <span class="dot"></span>
-          Bookings:
-          <a href="mailto:rackagentur@gmail.com" class="mail-link">rackagentur@gmail.com</a>
+        <div class="top-actions">
+          <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
         </div>
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-      
-      <!-- Navigation Menu -->
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="music.html">Music</a>
@@ -165,95 +29,16 @@
     </div>
   </header>
 
-  <div class="wrap">
-    <!-- About Content -->
-    <div class="grid">
-      <div class="card">
-        <div class="hd">
-          <h2>About</h2>
-        </div>
-        <div class="bd">
-          <div class="bio-section">
-            <div class="bio-img">
-              <img src="profile.jpg" alt="GEEZ Profile">
-            </div>
-            <div>
-              <p class="lead">Cologne-based circuit DJ, vocalist, and producer</p>
-              <p>GEEZ has been shaping the electronic music scene in Cologne since 2015 with his signature blend of Circuit Tribal peaks, Tech House drive, and Disco/Funk groove. His unique sound has earned him residencies at Cologne's top clubs and performances at major festivals across Europe.</p>
-              
-              <p>Starting as a bedroom producer, GEEZ quickly gained recognition for his high-energy live sets and innovative production techniques. His music combines the raw energy of classic techno with the soulful grooves of disco and the precision of modern tech house.</p>
-              
-              <p>When not performing, GEEZ spends his time mentoring young artists and developing new talent through his Cologne-based music collective. He's known for his dynamic stage presence and ability to read and energize any crowd.</p>
-            </div>
-          </div>
-          
-          <div style="margin-top: 30px; text-align: center;">
-            <a class="btn" href="GeezEPK.pdf" target="_blank">
-              <span class="l"><span class="t">Download Full EPK</span><span class="d">2-page press kit</span></span>
-              <span class="r">↗</span>
-            </a>
-          </div>
-        </div>
+  <main class="wrap">
+    <div class="card" style="margin-top:20px;">
+      <div class="hd"><h2>Biography</h2></div>
+      <div class="bd">
+        <img src="profile.jpg" style="width:100%; border-radius:16px; margin-bottom:20px;" alt="Profile">
+        <p>Cologne-based circuit DJ, vocalist, and producer shaping the scene since 2015.</p>
+        <p>Signature sound: Circuit Tribal peaks → Tech House drive → Disco / Funk groove.</p>
       </div>
     </div>
-
-    <!-- Footer -->
-    <div class="card footer-card">
-      <div class="footer">
-        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
-        <div>
-          <a href="https://soundofgeez.com">soundofgeez.com</a>
-          • <a href="datenschutz.html">Datenschutz</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script>
-    // Set copyright year
-    document.getElementById('y').textContent = new Date().getFullYear();
-    
-    // Mobile menu functionality with error handling
-    function initMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      
-      if (!menuToggle || !navMenu) {
-        console.error('Mobile menu elements not found');
-        return;
-      }
-
-      // Toggle menu
-      menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-      });
-
-      // Close menu when clicking links
-      document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-        });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('active');
-          menuToggle.classList.remove('active');
-        }
-      });
-    }
-
-    // Initialize when DOM is loaded
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-    initMobileMenu();
-  </script>
-  
-  <!-- External scripts -->
-  <script src="script.js" defer></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
