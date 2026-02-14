@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="GEEZ — International DJ & Producer. Peak-driven tech house. Disco soul. Tribal energy." />
+  <meta name="description" content="GEEZ — International DJ & Producer. Peak-driven tech house." />
   <title>GEEZ — Sound Of Geez</title>
 
   <link rel="icon" type="image/png" href="BRANDWT.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=1001" />
+  <link rel="stylesheet" href="styles.css?v=1002" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36220256-1"></script>
   <script>
@@ -27,16 +27,16 @@
           <div class="mark"><img src="BRANDWT.png" alt="GEEZ Logo" /></div>
           <div class="titles">
             <h1>GEEZ</h1>
-            <div class="sub">DJ & Producer • <strong>Peak Tech House</strong></div>
+            <div class="sub">DJ & Producer • <strong>Tech House</strong></div>
           </div>
         </div>
 
         <div class="top-actions">
           <div class="pill">
             <span class="dot"></span>
-            <a class="mail-link" href="mailto:info@soundofgeez.com">info@soundofgeez.com</a>
+            <a href="mailto:info@soundofgeez.com">info@soundofgeez.com</a>
           </div>
-          <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <button class="mobile-menu-toggle" aria-label="Toggle Menu">
             <span></span><span></span><span></span>
           </button>
         </div>
@@ -57,16 +57,15 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <div class="kicker"><span class="kdot"></span> SOUND OF GEEZ</div>
           <h2>GEEZ</h2>
           <p>Peak-driven Tech House. Disco soul. Tribal energy.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:info@soundofgeez.com?subject=Booking Inquiry">
+            <a class="btn btn-primary" href="mailto:info@soundofgeez.com">
               <span class="l"><span class="t">BOOK GEEZ</span><span class="d">Email inquiry</span></span>
               <span class="r">✉</span>
             </a>
             <a class="btn" href="GeezEPK.pdf" download>
-              <span class="l"><span class="t">DOWNLOAD EPK</span><span class="d">PDF Press Kit</span></span>
+              <span class="l"><span class="t">DOWNLOAD EPK</span><span class="d">Press Assets</span></span>
               <span class="r">↗</span>
             </a>
           </div>
@@ -76,11 +75,11 @@
 
     <section class="grid">
       <div class="card">
-        <div class="hd"><h3>EPK & Proof</h3></div>
+        <div class="hd"><h3>Music</h3></div>
         <div class="bd">
           <div class="buttons">
             <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank">
-              <span class="l"><span class="t">SoundCloud</span><span class="d">Listen to the latest sets</span></span>
+              <span class="l"><span class="t">SoundCloud</span><span class="d">Live Sets</span></span>
               <span class="r">↗</span>
             </a>
           </div>
@@ -99,24 +98,9 @@
       </div>
     </section>
 
-    <section class="card inquiry-card">
-      <div class="hd"><h3>Booking Inquiry</h3></div>
-      <div class="bd">
-        <form action="https://formspree.io/f/xkozaeov" method="POST" class="inquiry-form">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Name / Event" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-          </div>
-          <textarea name="message" placeholder="Gig Details..." required></textarea>
-          <button type="submit" class="submit-btn">Send Inquiry ⚡</button>
-        </form>
-      </div>
-    </section>
-
     <section class="card footer-card">
-      <div class="footer">
-        <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
-        <div><a href="datenschutz.html">Datenschutz</a></div>
+      <div class="footer" style="padding: 20px; text-align: center; font-size: 13px; color: var(--muted);">
+        © <span id="y"></span> GEEZ • <a href="datenschutz.html">Datenschutz</a>
       </div>
     </section>
   </main>
@@ -127,21 +111,20 @@
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = navMenu.classList.toggle('active');
+    menuToggle.addEventListener('click', () => {
+      const active = navMenu.classList.toggle('active');
       menuToggle.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      // Prevent body from scrolling when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      // Lock scrolling when menu is open
+      document.body.style.overflow = active ? 'hidden' : '';
     });
 
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         menuToggle.classList.remove('active');
         document.body.style.overflow = '';
-      }
+      });
     });
   </script>
 </body>
