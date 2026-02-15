@@ -88,7 +88,22 @@ a:hover { opacity: .7; }
   min-width: 200px;
 }
 .btn:hover { transform: translateY(-1px); border-color: var(--accent); }
-
+.hero {
+ 
+  /* This links to your hero.jpg file */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero.jpg');
+  
+  /* This ensures the image covers the entire area without stretching */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* This gives the section enough height to be visible */
+  min-height: 80vh; 
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
 /* Video Grid (2 Columns) */
 .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; background: #000; }
