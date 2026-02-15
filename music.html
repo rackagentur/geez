@@ -5,23 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Music | GEEZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=1.4">
+  <link rel="stylesheet" href="styles.css?v=1.6">
 </head>
 <body>
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
         <div class="brand">
-          <div class="mark"><img src="BRANDWT.png" alt="Logo"></div>
+          <div class="mark"><img src="BRANDWT.png" alt="GEEZ Logo"></div>
           <div class="titles">
             <h1>GEEZ</h1>
-            <div class="sub">Music</div>
+            <div class="sub">Discography & Live Sets</div>
           </div>
         </div>
+
         <div class="top-actions">
-          <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
+          <div class="pill">
+            <span class="dot"></span>
+            <a href="mailto:info@soundofgeez.com">info@soundofgeez.com</a>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
+
       <nav class="nav-menu">
         <a href="index.html">Home</a>
         <a href="music.html" class="active">Music</a>
@@ -35,72 +43,64 @@
 
   <main class="wrap">
     <div class="card" style="margin-top:20px;">
-      <div class="hd"><h2>Tracks</h2></div>
+      <div class="hd">
+        <h2>Start Here: Featured Playlist</h2>
+      </div>
       <div class="bd">
-        <div class="track">
-          <h3>Circuit Tribal Peaks</h3>
-          
-          <div class="custom-audio-player" id="player1">
-            <audio id="audio1">
-              <source src="https://drive.google.com/uc?export=download&id=1ioBcGiX-2jeAEEnomTiTnUC6Ad7PeqOi" type="audio/mpeg">
-            </audio>
-            
-            <button class="play-btn" id="play1">
-              <i class="fa-solid fa-play"></i>
-            </button>
-            
-            <div class="progress-container" id="progCont1">
-              <div class="progress-bar" id="bar1"></div>
-            </div>
-            
-            <div class="time-display" id="time1">0:00</div>
-          </div>
+        <p class="lead" style="margin-bottom: 20px;">
+          Explore the signature sound of GEEZ — from peak-hour Tech House to soulful tribal grooves.
+        </p>
+        
+        <div style="margin-top: 15px; border-radius: 16px; overflow: hidden; border: 1px solid var(--stroke);">
+          <iframe 
+            width="100%" 
+            height="450" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1199580637&color=%237A1FA2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          </iframe>
         </div>
         
-        <div style="margin-top:20px;">
-          <a class="btn" href="https://soundcloud.com/gregorgusgeez" target="_blank">
-            <span class="l"><span class="t">More SoundCloud</span></span>
+        <div style="margin-top:24px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="https://soundcloud.com/gregorgusgeez" target="_blank">
+            <span class="l">
+              <span class="t">GEEZ on SoundCloud</span>
+              <span class="d">Follow for new weekly sets</span>
+            </span>
             <span class="r">↗</span>
           </a>
         </div>
       </div>
     </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="hd"><h3>Spotify</h3></div>
+        <div class="bd">
+          <a class="btn" href="https://spotify.com" target="_blank">
+            <span class="l"><span class="t">Stream on Spotify</span></span>
+            <span class="r"><i class="fa-brands fa-spotify"></i></span>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="hd"><h3>Apple Music</h3></div>
+        <div class="bd">
+          <a class="btn" href="https://apple.com" target="_blank">
+            <span class="l"><span class="t">Stream on Apple</span></span>
+            <span class="r"><i class="fa-brands fa-apple"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
+      <div><a href="datenschutz.html">Datenschutz</a></div>
+    </footer>
   </main>
 
   <script src="script.js"></script>
-  <script>
-    // Custom Audio Logic
-    const audio = document.getElementById('audio1');
-    const playBtn = document.getElementById('play1');
-    const progressBar = document.getElementById('bar1');
-    const progressContainer = document.getElementById('progCont1');
-    const timeDisplay = document.getElementById('time1');
-
-    playBtn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-      } else {
-        audio.pause();
-        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-      }
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      const percent = (audio.currentTime / audio.duration) * 100;
-      progressBar.style.width = percent + '%';
-      
-      const mins = Math.floor(audio.currentTime / 60);
-      const secs = Math.floor(audio.currentTime % 60);
-      timeDisplay.innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    });
-
-    progressContainer.addEventListener('click', (e) => {
-      const width = progressContainer.clientWidth;
-      const clickX = e.offsetX;
-      const duration = audio.duration;
-      audio.currentTime = (clickX / width) * duration;
-    });
-  </script>
 </body>
 </html>
