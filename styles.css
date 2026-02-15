@@ -30,12 +30,12 @@ a { color: inherit; text-decoration: none; transition: opacity .2s; }
 a:hover { opacity: .7; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 18px; }
 
-/* Sticky Header & Navigation */
+/* Sticky Header */
 .sticky-header {
   position: sticky;
   top: 0;
-  z-index: 2000;
-  background: rgba(10, 10, 14, 0.95);
+  z-index: 3000;
+  background: rgba(10, 10, 14, 0.98);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--stroke);
 }
@@ -48,20 +48,7 @@ a:hover { opacity: .7; }
   padding: 14px 0;
 }
 
-.brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.mark {
-  width: 50px; height: 50px;
-  border-radius: 14px;
-  display: grid; place-items: center;
-  border: 1px solid var(--stroke);
-  background: rgba(18, 18, 25, .55);
-  overflow: hidden;
-}
-.mark img { width: 40px; height: 40px; object-fit: contain; }
-.titles h1 { margin: 0; font-size: 22px; letter-spacing: .04em; }
-.sub { margin-top: 2px; color: var(--muted); font-size: 11px; }
-
-/* Hamburger Icon Animation */
+/* Mobile Menu Animation */
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -70,7 +57,7 @@ a:hover { opacity: .7; }
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 2100;
+  z-index: 3100;
 }
 .mobile-menu-toggle span {
   display: block;
@@ -83,70 +70,43 @@ a:hover { opacity: .7; }
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
 .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Navigation */
 .nav-menu { display: flex; gap: 14px; padding: 8px 0 14px; }
 .nav-menu a { font-size: 13px; color: var(--muted); padding: 8px 10px; border-radius: 999px; border: 1px solid transparent; }
 .nav-menu a.active { color: var(--ink); border-color: rgba(122, 31, 162, .55); background: rgba(122, 31, 162, .14); }
-/* ... keep your existing root and base styles ... */
 
-/* Sticky Header - Increased Z-index to stay on top */
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 3000;
-  background: rgba(10, 10, 14, 0.98); /* Solid background */
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--stroke);
+/* RESTORED: Hero Section Images */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('assets/hero-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  border-radius: var(--radius);
+  margin: 16px 0;
+  overflow: hidden;
 }
 
-/* Navigation Menu Mobile Fix */
-@media (max-width: 760px) {
-  .nav-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #0b0b0f; /* Solid dark background to hide page content */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2500;
-    gap: 25px;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-menu a {
-    font-size: 24px;
-    color: var(--ink);
-    padding: 15px;
-  }
-
-  /* Vertical Spacing Fix (Red Circle) */
-  .card {
-    margin-bottom: 32px !important; 
-  }
-
-  .video-grid {
-    gap: 32px !important;
+@media (min-width: 761px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('assets/hero-desktop.jpg');
+    min-height: 80vh;
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 60px;
   }
 }
 
-/* Hamburger Animation to 'X' */
-.mobile-menu-toggle.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.mobile-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.mobile-menu-toggle.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+/* Grid Reverts: 3 Columns Desktop, 1 Column Mobile */
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 
-/* Card Styling */
 .card { 
   border-radius: var(--radius); 
   border: 1px solid var(--stroke); 
@@ -155,57 +115,10 @@ a:hover { opacity: .7; }
   backdrop-filter: blur(10px);
   margin-bottom: 32px; 
 }
-.hd { padding: 18px; }
-.bd { padding: 0 18px 18px; }
 
-/* REVERTED: Video Grid (3 columns on desktop) */
-.video-grid { 
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 24px; 
-}
-.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; background: #000; }
-.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-/* Photo Gallery Grid */
-.gallery-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-  gap: 16px; 
-  margin-top: 20px; 
-}
-.gallery-item { 
-  aspect-ratio: 4/5; 
-  overflow: hidden; 
-  border-radius: 16px; 
-  border: 1px solid var(--stroke); 
-  cursor: pointer; 
-}
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
-.gallery-item:hover img { transform: scale(1.05); }
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 14px 24px;
-  border-radius: 18px;
-  border: 1px solid rgba(122, 31, 162, .55);
-  background: rgba(18, 18, 25, .75);
-  color: var(--ink);
-  transition: 0.2s;
-  text-align: center;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 1024px) {
-  .video-grid { grid-template-columns: 1fr 1fr; } /* 2 columns for tablets */
-}
-
+/* Mobile Fixes */
 @media (max-width: 760px) {
-  .video-grid { grid-template-columns: 1fr; gap: 32px; } /* 1 column for phones with vertical space */
+  .video-grid, .grid { grid-template-columns: 1fr; gap: 32px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   
   .nav-menu { 
@@ -216,13 +129,13 @@ a:hover { opacity: .7; }
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    z-index: 1500; 
+    z-index: 2500; 
     gap: 20px; 
   }
   .nav-menu.active { display: flex; }
 }
 
-/* Reveal Animation */
+/* Animation Support */
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
