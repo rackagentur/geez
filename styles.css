@@ -111,7 +111,17 @@ a:hover { opacity: .7; }
   background: rgba(18, 18, 25, .55); transition: transform .12s ease; min-width: 280px;
 }
 .btn:hover { transform: translateY(-1px); border-color: var(--stroke2); }
-.btn-primary { border-color: rgba(122, 31, 162, .55); background: linear-gradient(135deg, rgba(122, 31, 162, .22), rgba(18, 18, 25, .55)); }
+.btn-primary { 
+  border-color: rgba(122, 31, 162, .55); 
+  background: linear-gradient(135deg, rgba(122, 31, 162, .22), rgba(18, 18, 25, .55)); 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-primary:hover {
+  border-color: rgba(122, 31, 162, .90);
+}
 
 .btn-download {
   background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
