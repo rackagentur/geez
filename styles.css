@@ -180,5 +180,17 @@ a:hover { opacity: .7; }
   
   .hero-copy h2 { font-size: 38px; }
 }
+/* Fade-in Animation Styles */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .footer { display: flex; justify-content: space-between; padding: 24px 18px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--stroke); }
