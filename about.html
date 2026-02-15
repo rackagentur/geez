@@ -5,52 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | GEEZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=1.4">
+  <link rel="stylesheet" href="styles.css?v=2.2">
 </head>
+
 <body>
   <header class="sticky-header">
     <div class="wrap">
       <div class="top">
         <div class="brand">
-          <div class="mark"><img src="BRANDWT.png" alt="Logo"></div>
-          <div class="titles"><h1>GEEZ</h1><div class="sub">About</div></div>
+          <div class="mark"><img src="BRANDWT.png" alt="GEEZ Logo"></div>
+          <div class="titles">
+            <h1>GEEZ</h1>
+            <div class="sub">About</div>
+          </div>
         </div>
-        <div class="top-actions"><button class="mobile-menu-toggle"><span></span><span></span><span></span></button></div>
+        <div class="top-actions">
+          <button class="mobile-menu-toggle">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
       <nav class="nav-menu">
-        <a href="index.html">Home</a><a href="music.html">Music</a><a href="videos.html">Videos</a><a href="tour.html">Tour</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
+
   <main class="wrap">
     <div class="card" style="margin-top:20px;">
-      <div class="hd"><h2>Biography</h2></div>
+      <div class="hd"><h2>Bio</h2></div>
       <div class="bd">
         <p>GEEZ is an international circuit DJ known for precision-built tribal and tech house sets that rise from hypnotic groove into peak-hour intensity. With commanding stage presence and emotional control, he delivers nights that build, sweat, and release together. From Pride main stages to global circuit floors, GEEZ brings power without chaos and groove without compromise.</p>
-        <a class="btn" href="SoundofGeezPICS.zip" download><span>DOWNLOAD PRESS PHOTOS (ZIP)</span></a>
+        <div style="margin-top:20px;">
+          <a class="btn" href="press_photos.zip" download>Download Press Photos (ZIP)</a>
+        </div>
       </div>
     </div>
+
     <div class="card">
       <div class="hd"><h2>Gallery</h2></div>
       <div class="bd">
         <div class="gallery-grid">
-          <div class="gallery-item lightbox-trigger"><img src="gallery1.jpg" alt="Place holder"></div>
-          <div class="gallery-item lightbox-trigger"><img src="gallery2.jpg" alt="Place holder"></div>
-          <div class="gallery-item lightbox-trigger"><img src="gallery3.jpg" alt="Place holder"></div>
-          <div class="gallery-item lightbox-trigger"><img src="gallery4.jpg" alt="Place holder"></div>
-          <div class="gallery-item lightbox-trigger"><img src="gallery5.jpg" alt="Place holder"></div>
-          <div class="gallery-item lightbox-trigger"><img src="gallery6.jpg" alt="Place holder"></div>
-        </div>
-       </div>
+          <div class="gallery-item"><img src="assets/photo1.jpg" alt="GEEZ 1"></div>
+          <div class="gallery-item"><img src="assets/photo2.jpg" alt="GEEZ 2"></div>
+          <div class="gallery-item"><img src="assets/photo3.jpg" alt="GEEZ 3"></div>
+          <div class="gallery-item"><img src="assets/photo4.jpg" alt="GEEZ 4"></div>
+          <div class="gallery-item"><img src="assets/photo5.jpg" alt="GEEZ 5"></div>
+          <div class="gallery-item"><img src="assets/photo6.jpg" alt="GEEZ 6"></div>
         </div>
       </div>
     </div>
+
     <footer class="footer">
       <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
       <div><a href="datenschutz.html">Datenschutz</a></div>
     </footer>
   </main>
-  <div class="lightbox" id="lightbox"><img src=""></div>
+
   <script src="script.js"></script>
 </body>
 </html>
