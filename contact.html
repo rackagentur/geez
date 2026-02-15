@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | GEEZ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=1.3">
+  <link rel="stylesheet" href="styles.css?v=1.4">
 </head>
 <body>
   <header class="sticky-header">
@@ -22,16 +22,32 @@
     </div>
   </header>
   <main class="wrap">
-    <div class="card" style="margin-top:20px;">
-      <div class="hd"><h2>Inquiry</h2></div>
-      <div class="bd">
-        <form action="https://formspree.io/f/xkozaeov" method="POST">
-          <input type="text" name="name" placeholder="Name" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px;">
-          <textarea name="message" placeholder="Details" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px; height:100px;"></textarea>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Send⚡</button>
-        </form>
+    <div class="grid" style="margin-top:20px;">
+      <div class="card">
+        <div class="hd"><h2>Booking Inquiry</h2></div>
+        <div class="bd">
+          <form action="https://formspree.io/f/xkozaeov" method="POST">
+            <input type="text" name="name" placeholder="Name" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px;">
+            <textarea name="message" placeholder="Details" required style="width:100%; margin-bottom:10px; padding:12px; background:rgba(0,0,0,0.3); border:1px solid var(--stroke); color:#fff; border-radius:8px; height:100px;"></textarea>
+            <button type="submit" class="btn" style="width:100%;">Send⚡</button>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="hd"><h2>Social Media</h2></div>
+        <div class="bd" style="display: flex; flex-direction: column; gap: 10px;">
+          <a class="btn" href="https://instagram.com/gregorgusgeez"><span>Instagram</span><i class="fa-brands fa-instagram"></i></a>
+          <a class="btn" href="#"><span>TikTok</span><i class="fa-brands fa-tiktok"></i></a>
+          <a class="btn" href="#"><span>Facebook</span><i class="fa-brands fa-facebook"></i></a>
+          <a class="btn" href="http://googleusercontent.com/spotify.com/3"><span>Spotify</span><i class="fa-brands fa-spotify"></i></a>
+          <a class="btn" href="https://soundcloud.com/gregorgusgeez"><span>SoundCloud</span><i class="fa-brands fa-soundcloud"></i></a>
+        </div>
       </div>
     </div>
+    <footer class="footer">
+      <div>© <span id=\"y\"></span> GEEZ • Cologne, DE</div>
+      <div><a href="datenschutz.html">Datenschutz</a></div>
+    </footer>
   </main>
   <script src="script.js"></script>
 </body>
