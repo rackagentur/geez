@@ -52,7 +52,7 @@ a:hover { opacity: .7; }
 .mark {
   width: 64px; height: 64px;
   border-radius: 18px;
-  display: ; place-items: center;
+  display: grid; place-items: center;
   border: 1px solid var(--stroke);
   background: rgba(18, 18, 25, .55);
   box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
@@ -111,17 +111,7 @@ a:hover { opacity: .7; }
   background: rgba(18, 18, 25, .55); transition: transform .12s ease; min-width: 280px;
 }
 .btn:hover { transform: translateY(-1px); border-color: var(--stroke2); }
-.btn-primary { 
-  border-color: rgba(122, 31, 162, .55); 
-  background: linear-gradient(135deg, rgba(122, 31, 162, .22), rgba(18, 18, 25, .55)); 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn-primary:hover {
-  border-color: rgba(122, 31, 162, .90);
-}
+.btn-primary { border-color: rgba(122, 31, 162, .55); background: linear-gradient(135deg, rgba(122, 31, 162, .22), rgba(18, 18, 25, .55)); }
 
 .btn-download {
   background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
@@ -133,7 +123,7 @@ a:hover { opacity: .7; }
 .hd { padding: 18px; }
 .bd { padding: 0 18px 18px; }
 
-/* Video Specific Grid - side by side */
+/* Video Grid Specific */
 .video-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -180,8 +170,6 @@ audio { width: 100%; margin-top: 10px; filter: invert(1); }
   transition: transform 0.2s;
 }
 
-.play-btn:hover { transform: scale(1.05); }
-
 .progress-container { flex: 1; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; position: relative; cursor: pointer; }
 .progress-bar { height: 100%; background: #fff; border-radius: 3px; width: 0%; }
 .time-display { font-size: 12px; font-family: monospace; color: var(--muted); min-width: 40px; }
@@ -203,22 +191,8 @@ audio { width: 100%; margin-top: 10px; filter: invert(1); }
     flex-direction: column; padding: 120px 24px; z-index: 1050; gap: 15px; opacity: 0;
   }
   .nav-menu.active { display: flex; opacity: 1; animation: menuFadeIn 0.3s forwards; }
-  @keyframes menuFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
   .nav-menu a { font-size: 26px; padding: 15px; border-bottom: 1px solid var(--stroke); font-weight: 700; width: 100%; }
 
-  .grid { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 16px; 
-  margin-bottom: 16px; 
-}
-
-@media (max-width: 760px) {
-  .grid { 
-    grid-template-columns: 1fr; /* Stacks to one column on mobile */
-  }
-}
-  /* Stack videos on mobile */
   .video-grid { grid-template-columns: 1fr; }
 
   .hero::before { background-image: url("/assets/hero-mobile.jpg"); }
