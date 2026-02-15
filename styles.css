@@ -133,7 +133,57 @@ audio { width: 100%; margin-top: 10px; filter: invert(1); }
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
 .gallery-item { aspect-ratio: 1/1; overflow: hidden; border-radius: 16px; border: 1px solid var(--stroke); cursor: pointer; transition: transform 0.3s ease; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+/* Custom Audio Player Styling */
+.custom-audio-player {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
+.play-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7A1FA2, #1a73e8); /* Purple to Blue */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+}
+
+.progress-container {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #fff; /* White progress */
+  border-radius: 3px;
+  width: 0%;
+}
+
+.time-display {
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--muted);
+  min-width: 40px;
+}
 /* Lightbox */
 .lightbox { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.95); display: none; align-items: center; justify-content: center; z-index: 2000; cursor: zoom-out; opacity: 0; transition: opacity 0.3s ease; }
 .lightbox.active { display: flex; opacity: 1; }
