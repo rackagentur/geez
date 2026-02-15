@@ -1,38 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = navMenu.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-    }
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const yearSpan = document.getElementById('y');
 
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
-    const triggers = document.querySelectorAll('.lightbox-trigger img');
+  // 1. Set current year in footer
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
-    if (lightbox && lightboxImg) {
-        triggers.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
+  // 2. Toggle Mobile Menu and Hamburger Animation
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      
+      // Prevent scrolling when menu is open
+      if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    });
 
-        lightbox.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            if (!navMenu.classList.contains('active')) document.body.style.overflow = '';
-        });
-    }
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  }
 
-    // Year
-    const yearEl = document.getElementById('y');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  // 3. Scroll Reveal Animation
+  const revealElements = document.querySelectorAll('.card, .video-grid, .tour-item');
+  
+  // Add the 'reveal' class to elements you want to animate
+  revealElements.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Once it's revealed, we can stop observing it
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15 // Triggers when 15% of the element is visible
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
 });
