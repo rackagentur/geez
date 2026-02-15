@@ -52,7 +52,7 @@ a:hover { opacity: .7; }
 .mark {
   width: 64px; height: 64px;
   border-radius: 18px;
-  display: grid; place-items: center;
+  display: ; place-items: center;
   border: 1px solid var(--stroke);
   background: rgba(18, 18, 25, .55);
   box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
@@ -196,6 +196,18 @@ audio { width: 100%; margin-top: 10px; filter: invert(1); }
   @keyframes menuFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
   .nav-menu a { font-size: 26px; padding: 15px; border-bottom: 1px solid var(--stroke); font-weight: 700; width: 100%; }
 
+  .grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 16px; 
+  margin-bottom: 16px; 
+}
+
+@media (max-width: 760px) {
+  .grid { 
+    grid-template-columns: 1fr; /* Stacks to one column on mobile */
+  }
+}
   /* Stack videos on mobile */
   .video-grid { grid-template-columns: 1fr; }
 
