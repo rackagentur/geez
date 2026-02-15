@@ -9,8 +9,24 @@
   <style>
     .tour-list { display: flex; flex-direction: column; gap: 24px; }
     .tour-item { display: grid; grid-template-columns: 120px 1fr auto; gap: 20px; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--stroke); }
-    .flyer-placeholder { width: 120px; aspect-ratio: 1/1; background: #222; border-radius: 8px; border: 1px solid var(--stroke); }
+    
+    /* Updated Flyer Styling */
+    .tour-flyer { 
+      width: 120px; 
+      aspect-ratio: 1/1; 
+      background: #222; 
+      border-radius: 8px; 
+      border: 1px solid var(--stroke); 
+      object-fit: cover; /* Ensures the image fills the square without stretching */
+    }
+    
     .tour-info .date { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
+    
+    @media (max-width: 600px) {
+      .tour-item { grid-template-columns: 80px 1fr; }
+      .tour-flyer { width: 80px; }
+      .tour-item .btn { grid-column: span 2; width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -28,13 +44,15 @@
       </nav>
     </div>
   </header>
+
   <main class="wrap">
     <div class="card" style="margin-top:20px;">
       <div class="hd"><h2>Upcoming Dates</h2></div>
       <div class="bd">
         <div class="tour-list">
+          
           <div class="tour-item">
-            <div class="gallery1.jpg"></div>
+            <img src="flyer1.jpg" alt="RUSH Hamburg Flyer" class="tour-flyer">
             <div class="tour-info">
               <span class="date">Feb 07, 2026</span>
               <h3>RUSH Hamburg</h3>
@@ -42,8 +60,9 @@
             </div>
             <a href="#" class="btn" style="min-width: 100px;">Tickets</a>
           </div>
+
           <div class="tour-item">
-            <div class="gallery1.jpg""></div>
+            <img src="flyer2.jpg" alt="Cologne Pride Flyer" class="tour-flyer">
             <div class="tour-info">
               <span class="date">Jul 3-5, 2026</span>
               <h3>Cologne Pride Vodafone Stage</h3>
@@ -51,9 +70,11 @@
             </div>
             <a href="#" class="btn" style="min-width: 100px;">Info</a>
           </div>
+
         </div>
       </div>
     </div>
+
     <footer class="footer">
       <div>© <span id="y"></span> GEEZ • Cologne, DE</div>
       <div><a href="datenschutz.html">Datenschutz</a></div>
