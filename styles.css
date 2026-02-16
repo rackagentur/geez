@@ -44,7 +44,50 @@ body {
 .nav-menu { display: flex; gap: 14px; }
 .nav-menu a { font-size: 13px; color: var(--muted); padding: 8px 16px; border-radius: 999px; }
 .nav-menu a.active { color: var(--ink); border: 1px solid var(--accent); background: rgba(122, 31, 162, 0.1); }
+/* ... Keep your :root and base styles the same ... */
 
+/* Video Grid: Forces 3 columns on Desktop, 1 on Mobile */
+.video-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+}
+.video-item h3 { margin-top: 12px; font-size: 16px; color: var(--ink); }
+
+.video-wrapper { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  border-radius: 12px; 
+  border: 1px solid var(--stroke);
+}
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* Desktop: Hide Burger, Show Nav */
+@media (min-width: 769px) {
+  .mobile-menu-toggle { display: none !important; }
+  .nav-menu { display: flex !important; position: static; background: none; }
+}
+
+/* Mobile: Show Burger, Hide Nav until active, 1-Column Videos */
+@media (max-width: 768px) {
+  .video-grid { grid-template-columns: 1fr; }
+  .mobile-menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+  .mobile-menu-toggle span { width: 25px; height: 2px; background: var(--ink); }
+  
+  .nav-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  .nav-menu.active { display: flex; }
+}
 /* Hero Section */
 .hero {
   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('assets/hero-mobile.jpg');
